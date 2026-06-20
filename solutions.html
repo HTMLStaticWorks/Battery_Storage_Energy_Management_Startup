@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our product matrix: residential wall units, modular commercial packs, off-grid systems, and solar-integrated hybrid arrays.">
+    <title>VoltAmpere | Advanced Energy Storage Solutions</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300f2fe' d='M13 10V3L4 14h7v7l9-11h-7z'/%3E%3C/svg%3E">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/page-specific.css">
+    
+    <style>
+        /* Chemistry Diagram rotation and keyframe */
+        .rotating-core {
+            animation: rotate-core 20s linear infinite;
+            transform-origin: center;
+        }
+        @keyframes rotate-core {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Tilt card gradient border glow */
+        .gradient-glow-card {
+            position: relative;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all var(--transition-smooth);
+            border: 1px solid var(--border-color);
+        }
+        .gradient-glow-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: var(--radius-md);
+            padding: 2px;
+            background: linear-gradient(135deg, transparent, transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            transition: background var(--transition-smooth);
+            pointer-events: none;
+        }
+        .gradient-glow-card:hover::before {
+            background: var(--accent-gradient);
+        }
+        .gradient-glow-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+        }
+    </style>
+</head>
+<body class="theme-cyan-green">
+
+    <!-- HEADER NAVIGATION -->
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="VoltAmpere Home">
+                <div class="logo-icon"></div>
+                <span>VoltAmpere</span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Home2</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="solutions.html" class="nav-link active">Solutions</a>
+                <a href="compare.html" class="nav-link">Compare</a>
+                <a href="roi.html" class="nav-link">ROI</a>
+                <a href="projects.html" class="nav-link">Case Studies</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+
+                <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode">
+                    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4" />
+                        <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                    </svg>
+                    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                    </svg>
+                </button>
+
+                <a href="contact.html" class="btn btn-secondary"
+                    style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Quote</a>
+            </nav>
+
+            <button class="menu-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+                <span class="menu-btn-burger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div class="mobile-backdrop"></div>
+    <nav class="mobile-nav" aria-label="Mobile Navigation">
+        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode"
+            style="align-self: flex-end; margin-bottom: var(--spacing-sm);">
+            <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4" />
+                <path
+                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+            <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+        </button>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="solutions.html" class="nav-link active">Solutions</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="roi.html" class="nav-link">ROI</a>
+        <a href="projects.html" class="nav-link">Case Studies</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary" style="margin-top: var(--spacing-md);">Quote</a>
+    </nav>
+
+    <!-- HERO / TITLE -->
+    <section class="section" style="padding-top: calc(var(--header-height) + var(--spacing-sm)); padding-bottom: var(--spacing-sm); min-height: calc(75vh - var(--header-height)); display: flex; align-items: center;" aria-label="Solutions Hero">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <!-- Left column: SVG illustration -->
+                <div class="reveal stagger-2">
+                    <div style="height: 300px; width: 100%; display: flex; align-items: center; justify-content: center; perspective: 800px;">
+                        <svg viewBox="0 0 400 400" width="100%" height="100%" style="overflow: visible; transform: rotateX(20deg); animation: float-slow 4s ease-in-out infinite alternate;">
+                            <defs>
+                                <linearGradient id="sol-grad" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#00f2fe"/>
+                                    <stop offset="100%" stop-color="#00ff87"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Orbit rings -->
+                            <circle cx="200" cy="200" r="100" stroke="rgba(255,255,255,0.08)" stroke-width="2" fill="none"/>
+                            <ellipse cx="200" cy="200" rx="140" ry="60" stroke="rgba(255,255,255,0.08)" stroke-width="2" fill="none" transform="rotate(45 200 200)"/>
+                            <ellipse cx="200" cy="200" rx="140" ry="60" stroke="rgba(255,255,255,0.08)" stroke-width="2" fill="none" transform="rotate(-45 200 200)"/>
+                            
+                            <!-- Central Battery Core -->
+                            <g transform="translate(160, 160)" style="animation: rotate-about 12s linear infinite; transform-origin: 40px 40px;">
+                                <rect x="10" y="10" width="60" height="60" rx="8" fill="url(#sol-grad)" opacity="0.9" style="filter: drop-shadow(0 0 15px var(--accent-primary));"/>
+                                <!-- Inner grid detail -->
+                                <line x1="20" y1="30" x2="60" y2="30" stroke="#04121f" stroke-width="2"/>
+                                <line x1="20" y1="40" x2="60" y2="40" stroke="#04121f" stroke-width="2"/>
+                                <line x1="20" y1="50" x2="60" y2="50" stroke="#04121f" stroke-width="2"/>
+                            </g>
+                            
+                            <!-- Orbiting atoms -->
+                            <circle cx="200" cy="100" r="8" fill="#00f2fe" style="animation: orbit-1 6s linear infinite; transform-origin: 200px 200px; filter: drop-shadow(0 0 6px #00f2fe);"/>
+                            <circle cx="200" cy="100" r="6" fill="#00ff87" style="animation: orbit-2 8s linear infinite; transform-origin: 200px 200px; filter: drop-shadow(0 0 6px #00ff87);"/>
+                        </svg>
+                    </div>
+                </div>
+                <!-- Right column: Text -->
+                <div class="reveal">
+                    <h1 style="margin-bottom: var(--spacing-md);">Modular Energy <br><span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Storage Systems</span></h1>
+                    <p class="lead-text">Compare our safety-certified configurations designed for household storm backup, industrial load management, and microgrid integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTIONS MATRIX (6 UNIQUE CARD IMAGES) -->
+    <section class="section" style="background: var(--bg-secondary);" aria-label="Solutions Catalog">
+        <div class="container">
+            <div class="grid-3">
+                <!-- Solution 1: Residential -->
+                <div class="reveal gradient-glow-card">
+                    <img src="assets/images/res_battery.png" alt="Sleek residential battery storage unit" style="width: 100%; aspect-ratio: 1.2; object-fit: cover;">
+                    <div style="padding: var(--spacing-md);">
+                        <h3>Residential Storage</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Wall-integrated lithium units from 10 kWh to 30 kWh, supporting full smart-home rate optimization.</p>
+                        <a href="compare.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Specifications</a>
+                    </div>
+                </div>
+
+                <!-- Solution 2: Commercial -->
+                <div class="reveal stagger-2 gradient-glow-card">
+                    <img src="assets/images/com_battery.png" alt="Sleek commercial modular battery cabinet" style="width: 100%; aspect-ratio: 1.2; object-fit: cover;">
+                    <div style="padding: var(--spacing-md);">
+                        <h3>Commercial Storage</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Scalable storage boxes from 50 kWh to 200 kWh, engineered to offset corporate demand charge rates.</p>
+                        <a href="compare.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Specifications</a>
+                    </div>
+                </div>
+
+                <!-- Solution 3: Industrial -->
+                <div class="reveal stagger-3 gradient-glow-card">
+                    <img src="assets/images/ind_battery.png" alt="Large industrial grid scale battery unit" style="width: 100%; aspect-ratio: 1.2; object-fit: cover;">
+                    <div style="padding: var(--spacing-md);">
+                        <h3>Industrial Storage</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Megawatt-scale containerized systems for factories, peak-shaving, and solar field integrations.</p>
+                        <a href="compare.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Specifications</a>
+                    </div>
+                </div>
+
+                <!-- Solution 4: Hybrid -->
+                <div class="reveal gradient-glow-card">
+                    <img src="assets/images/hybrid_eco_house.png" alt="Modern house with solar integration" style="width: 100%; aspect-ratio: 1.2; object-fit: cover;">
+                    <div style="padding: var(--spacing-md);">
+                        <h3>Hybrid Inverters</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Seamless integration of rooftop solar arrays, storage banks, and grid utility connections.</p>
+                        <a href="compare.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Specifications</a>
+                    </div>
+                </div>
+
+                <!-- Solution 5: Off-grid -->
+                <div class="reveal stagger-2 gradient-glow-card">
+                    <img src="assets/images/off_grid_cabin.png" alt="Off-grid remote site battery storage cabin" style="width: 100%; aspect-ratio: 1.2; object-fit: cover;">
+                    <div style="padding: var(--spacing-md);">
+                        <h3>Off-Grid Power</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Self-sustaining remote microgrids using long-cycle flow batteries and weather-proof vaults.</p>
+                        <a href="compare.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Specifications</a>
+                    </div>
+                </div>
+
+                <!-- Solution 6: Backup Power -->
+                <div class="reveal stagger-3 gradient-glow-card">
+                    <img src="assets/images/backup_power_scene.png" alt="Solar backup battery backup system inside facility" style="width: 100%; aspect-ratio: 1.2; object-fit: cover;">
+                    <div style="padding: var(--spacing-md);">
+                        <h3>Critical Backup</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Under 10ms transfer switches providing backup protection for datacenters and hospital systems.</p>
+                        <a href="compare.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Specifications</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOLECULAR CHEMISTRY DIAGRAM SECTION -->
+    <section class="section" aria-label="Battery Chemistry">
+        <div class="container">
+            <div class="chemistry-diagram-container">
+                <div class="reveal">
+                    <h2>Advanced Safety-First Cell Chemistry</h2>
+                    <p class="lead-text">Our solid-electrolyte and advanced lithium formulations prevent thermal degradation and increase charging speed.</p>
+                    <p>Every node represents a safety sensor pathway continuously managed by our local BMS firmware, preventing thermal run-aways and maximizing cycle life.</p>
+                </div>
+                
+                <div class="reveal stagger-2 flex-center" style="height: 380px; position: relative;">
+                    <!-- Interactive molecular graphic using SVG -->
+                    <svg viewBox="0 0 300 300" width="300" height="300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Orbit circles -->
+                        <circle cx="150" cy="150" r="100" stroke="var(--border-color)" stroke-width="1.5" stroke-dasharray="4 6"/>
+                        <circle cx="150" cy="150" r="60" stroke="var(--border-color)" stroke-width="1"/>
+                        
+                        <!-- Center Core (Lithium Node) -->
+                        <circle cx="150" cy="150" r="30" fill="url(#core-grad)" filter="drop-shadow(0 0 15px var(--accent-primary))"/>
+                        <text x="150" y="155" text-anchor="middle" fill="#ffffff" font-family="Outfit" font-size="12" font-weight="600">Li-Ion</text>
+                        
+                        <!-- Orbiting electrons/nodes (using SVG rotate animation groups) -->
+                        <g class="rotating-core">
+                            <circle cx="150" cy="50" r="8" fill="#00f2fe"/>
+                            <circle cx="150" cy="250" r="8" fill="#00ff87"/>
+                            <circle cx="50" cy="150" r="8" fill="#f59e0b"/>
+                            <circle cx="250" cy="150" r="8" fill="#00f2fe"/>
+                        </g>
+                        
+                        <defs>
+                            <linearGradient id="core-grad" x1="120" y1="120" x2="180" y2="180">
+                                <stop offset="0%" stop-color="#00f2fe"/>
+                                <stop offset="100%" stop-color="#00ff87"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    
+                    <!-- Label indicators absolute tags fading sequentially -->
+                    <div class="chem-node-label" style="position: absolute; top: 30px; left: 10px; opacity: 0; transition: opacity 0.8s;">✦ Thermal Shunt Sensor</div>
+                    <div class="chem-node-label" style="position: absolute; top: 120px; right: 10px; opacity: 0; transition: opacity 0.8s;">✦ Overcharge Safeguard</div>
+                    <div class="chem-node-label" style="position: absolute; bottom: 30px; left: 40px; opacity: 0; transition: opacity 0.8s;">✦ Solid-Electrolyte Layer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom: var(--spacing-sm);">
+                        <div class="logo-icon"></div>
+                        <span>VoltAmpere</span>
+                    </a>
+                    <p>Modular battery storage units enabling full grid resilience and carbon emission offsets. Engineered for the future grid.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="LinkedIn">LN</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">TW</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">IG</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="solutions.html">Residential Storage</a></li>
+                        <li><a href="solutions.html">Commercial Storage</a></li>
+                        <li><a href="solutions.html">Industrial Racks</a></li>
+                        <li><a href="solutions.html">Solar Microgrids</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="resources.html">Buying Guide</a></li>
+                        <li><a href="resources.html">Installation Specs</a></li>
+                        <li><a href="resources.html">White Papers</a></li>
+                        <li><a href="resources.html">Energy Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Stay Informed</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Subscribe to receive clean energy updates and financial grid insights.</p>
+                    <form class="newsletter-form" action="#" method="POST" aria-label="Newsletter Subscription">
+                        <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Email address">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.25rem;">➜</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 VoltAmpere Systems. All rights reserved.</p>
+                <div style="display: flex; gap: var(--spacing-md);">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Trigger sequential fade-in of labels
+            const labels = document.querySelectorAll('.chem-node-label');
+            labels.forEach((label, idx) => {
+                setTimeout(() => {
+                    label.style.opacity = '1';
+                }, (idx + 1) * 600);
+            });
+        });
+    </script>
+</body>
+</html>

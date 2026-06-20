@@ -1,0 +1,966 @@
+/* ==========================================================================
+   PAGE-SPECIFIC STYLES & INTERACTIVE COMPONENTS (styles/page-specific.css)
+   ========================================================================== */
+
+/* --- UNIVERSAL ANIMATIONS FOR HERO ILLUSTRATIONS --- */
+@keyframes float-slow {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-15px); }
+}
+
+@keyframes rotate-about {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes rotate-about-3d {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+@keyframes orbit-1 {
+    0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+@keyframes orbit-2 {
+    0% { transform: rotate(180deg) translateX(140px) rotate(-180deg); }
+    100% { transform: rotate(540deg) translateX(140px) rotate(-540deg); }
+}
+
+@keyframes tilt-left {
+    0% { transform: rotate(-4deg); }
+    100% { transform: rotate(4deg); }
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(0.7); opacity: 0.9; }
+    100% { transform: scale(1.3); opacity: 0; }
+}
+
+/* ==========================================================================
+   1. HOME & GLOBAL UTILITY DESIGNS
+   ========================================================================== */
+
+/* --- MARQUEE BRAND WRAPPER --- */
+.marquee-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    position: relative;
+    padding: var(--spacing-sm) 0;
+    mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+}
+
+.marquee-content {
+    display: inline-flex;
+    animation: marquee-scroll 25s linear infinite;
+    gap: var(--spacing-xxl);
+}
+
+.marquee-item {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 580;
+    color: var(--text-muted);
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- 3D TILT CATEGORY CARDS --- */
+.tilt-card-container {
+    perspective: 1000px;
+}
+
+.card-3d-tilt {
+    position: relative;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-md);
+    height: 100%;
+    cursor: pointer;
+}
+
+.card-3d-tilt:hover {
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.card-3d-content {
+    transform: translateZ(40px); /* Pushes elements out in 3D space */
+    transition: transform var(--transition-smooth);
+}
+
+/* --- HORIZONTAL PROCESS TIMELINE --- */
+.timeline-horizontal-container {
+    position: relative;
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-md) 0;
+}
+
+.timeline-progress-line {
+    position: absolute;
+    top: 32px;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: var(--border-color);
+    z-index: 1;
+}
+
+.timeline-progress-fill {
+    height: 100%;
+    width: 0; /* Animated dynamically on scroll by JS */
+    background: var(--accent-gradient);
+    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-step {
+    text-align: center;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-node {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 3px solid var(--border-color);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 560;
+    color: var(--text-muted);
+    transition: all var(--transition-smooth);
+}
+
+.timeline-step.active .timeline-node {
+    border-color: var(--accent-primary);
+    background: var(--accent-gradient);
+    color: #ffffff;
+    box-shadow: 0 0 15px var(--accent-primary);
+}
+
+/* --- 3D COVERFLOW TESTIMONIALS --- */
+.coverflow-viewport {
+    height: 480px;
+    perspective: 1200px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coverflow-container {
+    position: relative;
+    width: 380px;
+    height: 340px;
+    transform-style: preserve-3d;
+    transition: transform var(--transition-smooth);
+}
+
+.coverflow-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: var(--spacing-lg);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    backface-visibility: hidden;
+    transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.coverflow-card.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: rotateY(0deg) translateZ(0px) scale(1);
+    z-index: 10;
+}
+
+.coverflow-card.prev {
+    opacity: 0.65;
+    pointer-events: auto;
+    transform: rotateY(45deg) translateZ(-150px) translateX(-280px);
+    z-index: 5;
+}
+
+.coverflow-card.next {
+    opacity: 0.65;
+    pointer-events: auto;
+    transform: rotateY(-45deg) translateZ(-150px) translateX(280px);
+    z-index: 5;
+}
+
+.coverflow-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+/* --- ACCORDION SYSTEM FAQ --- */
+.accordion-item {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.accordion-trigger {
+    width: 100%;
+    padding: var(--spacing-md) 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    font-weight: 540;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.accordion-trigger:hover {
+    color: var(--accent-primary);
+}
+
+.accordion-trigger svg {
+    transition: transform var(--transition-smooth);
+    width: 20px;
+    height: 20px;
+}
+
+.accordion-trigger.open svg {
+    transform: rotate(180deg);
+}
+
+.accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-smooth);
+}
+
+.accordion-content {
+    padding: 0 0 var(--spacing-md) 0;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   2. HOME 2 SPECIFIC DESIGNS
+   ========================================================================== */
+
+/* --- SPLIT-SCREEN PARALLAX HERO --- */
+.hero-split {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    min-height: 100vh;
+    padding-top: var(--header-height);
+    overflow: hidden;
+}
+
+.hero-split-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-lg);
+}
+
+.hero-split-right {
+    position: relative;
+    background: var(--bg-tertiary);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax-bg {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    object-fit: cover;
+    will-change: transform;
+    pointer-events: none;
+}
+
+.hero-split-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--bg-primary) 0%, transparent 100%);
+    z-index: 1;
+}
+
+/* --- STATS PROGRESS BARS --- */
+.stat-bar-container {
+    margin-bottom: var(--spacing-md);
+}
+
+.stat-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+}
+
+.stat-bar-bg {
+    width: 100%;
+    height: 10px;
+    background: var(--border-color);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.stat-bar-fill {
+    height: 100%;
+    width: 0; /* Dynamic grow */
+    background: var(--accent-gradient);
+    border-radius: var(--radius-full);
+    transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- VERTICAL 3D FLIP CARDS --- */
+.flip-card-container {
+    perspective: 1000px;
+    height: 360px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform var(--transition-smooth);
+    transform-style: preserve-3d;
+}
+
+.flip-card-container:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-md);
+    backface-visibility: hidden;
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-front {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.flip-card-back {
+    background: var(--accent-gradient);
+    color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back h3, .flip-card-back p {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   3. ABOUT US
+   ========================================================================== */
+
+/* --- 3D SCROLL DEPTH TIMELINE --- */
+.timeline-depth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xl);
+    position: relative;
+    padding: var(--spacing-xl) 0;
+}
+
+.timeline-depth-card {
+    width: min(650px, 90%);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    gap: var(--spacing-md);
+    transform: scale(0.9) translateZ(-100px);
+    opacity: 0.5;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    will-change: transform, opacity;
+}
+
+.timeline-depth-card.active {
+    transform: scale(1) translateZ(0);
+    opacity: 1;
+    border-color: var(--accent-primary);
+}
+
+.timeline-depth-year {
+    font-family: var(--font-primary);
+    font-size: 2.2rem;
+    font-weight: 580;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    min-width: 100px;
+}
+
+/* --- GRAYSCALE TO COLOR TEAM CARDS --- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+    justify-content: center;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.team-card {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.team-card-image-wrap {
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.team-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter var(--transition-smooth), transform var(--transition-smooth);
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.team-card:hover .team-card-image {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.team-card-info {
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+/* ==========================================================================
+   4. SOLUTIONS & CHEMISTRY DIAGRAMS
+   ========================================================================== */
+
+/* --- MOLECULAR CHEMISTRY SCHEMATIC --- */
+.chemistry-diagram-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.chemistry-visual {
+    position: relative;
+    height: 380px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.chem-node {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    box-shadow: 0 0 10px var(--accent-primary);
+    cursor: pointer;
+}
+
+.chem-node-pulse {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-primary);
+    animation: chem-pulse 2s infinite;
+    opacity: 0;
+}
+
+@keyframes chem-pulse {
+    0% { transform: scale(0.6); opacity: 1; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+.chem-node-label {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: var(--radius-sm);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    pointer-events: none;
+    color: var(--text-primary);
+}
+
+.chem-node:hover .chem-node-label {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   5. COMPARISON HEADER & SWITCH
+   ========================================================================== */
+
+.comparison-table-wrapper {
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    background: var(--bg-secondary);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.comparison-table th, .comparison-table td {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table thead th {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-weight: 560;
+    position: sticky;
+    top: var(--header-height);
+    z-index: 10;
+}
+
+/* SLIDING PILL SWITCH */
+.toggle-pill-wrapper {
+    display: inline-flex;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    padding: 4px;
+    position: relative;
+    border: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-xl);
+}
+
+.toggle-pill-btn {
+    padding: 0.6rem 1.5rem;
+    font-family: var(--font-primary);
+    font-weight: 520;
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.toggle-pill-btn.active {
+    color: #ffffff;
+}
+
+.toggle-pill-slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    height: calc(100% - 8px);
+    width: calc(50% - 4px);
+    background: var(--accent-gradient);
+    border-radius: var(--radius-full);
+    z-index: 1;
+    transition: transform var(--transition-smooth);
+}
+
+.toggle-pill-wrapper.switched .toggle-pill-slider {
+    transform: translateX(100%);
+}
+
+/* ==========================================================================
+   6. BENEFITS & ROI
+   ========================================================================== */
+
+/* --- CIRCULAR PROGRESS RING --- */
+.progress-ring-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-ring-svg {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-circle-bg {
+    fill: none;
+    stroke: var(--border-color);
+    stroke-width: 10;
+}
+
+.progress-ring-circle-fill {
+    fill: none;
+    stroke: var(--accent-primary);
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 440; /* 2 * PI * r (r=70) */
+    stroke-dashoffset: 440; /* Dynamic scroll trigger draw */
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.progress-ring-text {
+    position: absolute;
+    font-family: var(--font-primary);
+    font-size: 2.2rem;
+    font-weight: 580;
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   7. PROJECTS & BEFORE/AFTER SLIDER
+   ========================================================================== */
+
+/* --- MASONRY GALLERY --- */
+.masonry-gallery {
+    column-count: 3;
+    column-gap: var(--spacing-md);
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    cursor: zoom-in;
+    transition: transform var(--transition-smooth);
+}
+
+.masonry-item img {
+    width: 100%;
+    display: block;
+}
+
+.masonry-item:hover {
+    transform: scale(1.02);
+}
+
+/* --- BEFORE AFTER DRAG SLIDER --- */
+.before-after-container {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    user-select: none;
+}
+
+.before-after-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.before-after-after {
+    z-index: 1;
+}
+
+.before-after-before {
+    z-index: 2;
+    width: 50%; /* Resized dynamically */
+    border-right: 3px solid #ffffff;
+}
+
+.before-after-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 48px;
+    height: 100%;
+    margin-left: -24px;
+    z-index: 3;
+    cursor: ew-resize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.before-after-button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+}
+
+/* --- LIGHTBOX MODAL --- */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(9, 14, 23, 0.95);
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-lg);
+    transform: scale(0.95);
+    transition: transform var(--transition-smooth);
+}
+
+.lightbox.active .lightbox-img {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition-fast);
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   8. CONTACT FORM LABELS & DYNAMICS
+   ========================================================================== */
+
+.form-group {
+    position: relative;
+    margin-bottom: var(--spacing-md);
+}
+
+.form-input {
+    width: 100%;
+    padding: 1.25rem 1rem 0.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    outline: none;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+}
+
+.form-input:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.form-label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    font-family: var(--font-primary);
+    color: var(--text-muted);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all var(--transition-fast);
+}
+
+/* Floating label trigger conditions */
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+    top: 0.5rem;
+    transform: translateY(0);
+    font-size: 0.75rem;
+    color: var(--accent-primary);
+}
+
+/* Handle textarea offset */
+textarea.form-input {
+    min-height: 120px;
+    resize: vertical;
+    padding-top: 1.5rem;
+}
+textarea.form-input + .form-label {
+    top: 1.2rem;
+    transform: none;
+}
+textarea.form-input:focus + .form-label,
+textarea.form-input:not(:placeholder-shown) + .form-label {
+    top: 0.5rem;
+}
+
+/* Submission success animation */
+.form-success-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--spacing-md);
+}
+
+.checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: var(--accent-primary);
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    stroke: var(--accent-primary);
+    stroke-width: 3;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
+}
+
+@keyframes stroke {
+    100% { stroke-dashoffset: 0; }
+}
+
+/* Media layout adaptations */
+@media (max-width: 900px) {
+    .masonry-gallery {
+        column-count: 2;
+    }
+    .chemistry-diagram-container {
+        grid-template-columns: 1fr;
+    }
+    .hero-split {
+        grid-template-columns: 1fr;
+    }
+    .hero-split-right {
+        height: 380px;
+    }
+}
+
+@media (max-width: 600px) {
+    .masonry-gallery {
+        column-count: 1;
+    }
+    .timeline-steps {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+    .timeline-progress-line {
+        left: 28px;
+        top: 10%;
+        width: 3px;
+        height: 80%;
+    }
+    .timeline-step {
+        flex-direction: row;
+        text-align: left;
+        width: 100%;
+        gap: var(--spacing-sm);
+    }
+    .timeline-node {
+        margin-bottom: 0;
+    }
+}

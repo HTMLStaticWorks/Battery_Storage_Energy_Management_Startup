@@ -1,1 +1,794 @@
-Battery_Storage_Energy_Management_Startup
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Premium clean energy solutions for residential, commercial and grid applications. Experience true energy independence and high-performance battery storage systems.">
+    <title>VoltAmpere | Premium Battery Storage & Energy Management</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300f2fe' d='M13 10V3L4 14h7v7l9-11h-7z'/%3E%3C/svg%3E">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/page-specific.css">
+</head>
+
+<body class="theme-cyan-green">
+
+    <!-- HEADER NAVIGATION -->
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="VoltAmpere Home">
+                <div class="logo-icon"></div>
+                <span>VoltAmpere</span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="home2.html" class="nav-link">Home2</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="solutions.html" class="nav-link">Solutions</a>
+                <a href="compare.html" class="nav-link">Compare</a>
+                <a href="roi.html" class="nav-link">ROI</a>
+                <a href="projects.html" class="nav-link">Case Studies</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+
+                <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode">
+                    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4" />
+                        <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                    </svg>
+                    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                    </svg>
+                </button>
+
+                <a href="contact.html" class="btn btn-secondary"
+                    style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Quote</a>
+            </nav>
+
+            <button class="menu-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+                <span class="menu-btn-burger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div class="mobile-backdrop"></div>
+    <nav class="mobile-nav" aria-label="Mobile Navigation">
+        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode"
+            style="align-self: flex-end; margin-bottom: var(--spacing-sm);">
+            <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4" />
+                <path
+                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+            <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+        </button>
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="home2.html" class="nav-link">Home2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="roi.html" class="nav-link">ROI</a>
+        <a href="projects.html" class="nav-link">Case Studies</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary" style="margin-top: var(--spacing-md);">Quote</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="section"
+        style="padding-top: calc(var(--header-height) + var(--spacing-sm)); padding-bottom: var(--spacing-sm); min-height: calc(100vh - var(--header-height)); display: flex; align-items: center; overflow: hidden;"
+        aria-label="Hero Showcase">
+        <!-- Background decorative gradient mesh -->
+        <div
+            style="position: absolute; top: -10%; right: -10%; width: 60%; height: 80%; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%); pointer-events: none; z-index: 0;">
+        </div>
+
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="grid-2" style="align-items: center;">
+                <div class="reveal">
+                    <h1 style="margin-bottom: var(--spacing-md);">Next-Gen Energy <br><span
+                            style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Storage
+                            Systems</span></h1>
+                    <p class="lead-text">Unlock complete grid independence, cut peak energy expenses, and integrate
+                        premium, reliable energy backup for your home and enterprise grid.</p>
+                    <div style="display: flex; gap: var(--spacing-sm); flex-wrap: wrap;">
+                        <a href="contact.html" class="btn btn-primary">Request a Free Consultation</a>
+                        <a href="compare.html" class="btn btn-secondary">Compare Solutions</a>
+                    </div>
+                </div>
+
+                <div class="reveal stagger-2" id="three-hero-container" style="height: 400px; position: relative;">
+                    <!-- Three.js Canvas will inject here, image fallback handled inside three-hero.js -->
+                    <noscript>
+                        <img src="assets/images/home_hero_fallback.png" alt="Futuristic Battery Storage Tower"
+                            style="width: 100%; height: 100%; object-fit: contain;">
+                    </noscript>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUSTED BRANDS MARQUEE -->
+    <section class="section"
+        style="padding: var(--spacing-md) 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); background: var(--bg-secondary);"
+        aria-label="Trusted Partners">
+        <div class="container">
+            <div class="marquee-wrapper">
+                <div class="marquee-content">
+                    <div class="marquee-item">⚡ SIEMENS ENERGY</div>
+                    <div class="marquee-item">⚡ SCHNEIDER ELECTRIC</div>
+                    <div class="marquee-item">⚡ TESLA ENERGY</div>
+                    <div class="marquee-item">⚡ ABB GRID SOLUTIONS</div>
+                    <div class="marquee-item">⚡ FLUENCE POWER</div>
+                    <div class="marquee-item">⚡ CATL CELLTECH</div>
+                    <!-- Duplicate for infinite scrolling -->
+                    <div class="marquee-item">⚡ SIEMENS ENERGY</div>
+                    <div class="marquee-item">⚡ SCHNEIDER ELECTRIC</div>
+                    <div class="marquee-item">⚡ TESLA ENERGY</div>
+                    <div class="marquee-item">⚡ ABB GRID SOLUTIONS</div>
+                    <div class="marquee-item">⚡ FLUENCE POWER</div>
+                    <div class="marquee-item">⚡ CATL CELLTECH</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY BATTERY STORAGE -->
+    <section class="section" aria-label="Why Battery Storage">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div class="reveal">
+                    <img src="assets/images/home_why_battery.png" alt="Technological clean energy power lines"
+                        style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                </div>
+                <div class="reveal stagger-2" style="padding-left: var(--spacing-md);">
+                    <h2 style="margin-bottom: var(--spacing-md);">The Ultimate Catalyst for <br><span
+                            style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Green
+                            Grid Stability</span></h2>
+                    <p class="lead-text">Transitioning to sustainable grid practices requires more than solar
+                        production. High-performance battery systems capture excess daytime solar, feeding clean backup
+                        power back when sunrays fade.</p>
+                    <p>By shifting grid demand and leveling loads, you prevent system overloads, preserve localized
+                        electricity distribution, and secure absolute protection against blackout contingencies.</p>
+                    <div class="flex-row" style="margin-top: var(--spacing-md);">
+                        <div class="stat-item" style="flex: 1;">
+                            <div class="stat-number" data-target="98" data-suffix="%"
+                                style="font-family: var(--font-primary); font-size: 2.5rem; font-weight: 580; color: var(--accent-primary);">
+                                0%</div>
+                            <p style="margin-bottom: 0; font-size: 0.9rem; color: var(--text-muted);">Grid Dependability
+                            </p>
+                        </div>
+                        <div class="stat-item" style="flex: 1;">
+                            <div class="stat-number" data-target="65" data-suffix="%"
+                                style="font-family: var(--font-primary); font-size: 2.5rem; font-weight: 580; color: var(--accent-primary);">
+                                0%</div>
+                            <p style="margin-bottom: 0; font-size: 0.9rem; color: var(--text-muted);">Carbon Reduction
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESIDENTIAL SOLUTIONS -->
+    <section class="section" style="background: var(--bg-secondary);" aria-label="Residential Solutions">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div class="reveal">
+                    <span
+                        style="font-family: var(--font-primary); text-transform: uppercase; font-weight: 540; letter-spacing: 0.1em; color: var(--accent-primary);">Residential
+                        Storage</span>
+                    <h2 style="margin-top: 0.5rem; margin-bottom: var(--spacing-md);">Self-Sustaining Smart Homes</h2>
+                    <p class="lead-text">Take charge of your household electrical infrastructure. Our elegant,
+                        wall-integrated lithium energy hubs store grid-connected solar power to power major appliances
+                        during outages.</p>
+                    <p>Designed with intuitive mobile alerts, you can adjust storage buffers, schedule smart device
+                        runtimes, and completely bypass peak residential utility rates.</p>
+                    <a href="solutions.html" class="btn btn-secondary" style="margin-top: var(--spacing-sm);">Explore
+                        Home Systems</a>
+                </div>
+                <div class="reveal stagger-2">
+                    <img src="assets/images/home_res_sol.png" alt="Sleek home battery storage unit on residential wall"
+                        style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMERCIAL SOLUTIONS -->
+    <section class="section" aria-label="Commercial Solutions">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div class="reveal">
+                    <img src="assets/images/home_com_sol.png"
+                        alt="Large modular batteries container outdoor installation"
+                        style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                </div>
+                <div class="reveal stagger-2" style="padding-left: var(--spacing-md);">
+                    <span
+                        style="font-family: var(--font-primary); text-transform: uppercase; font-weight: 540; letter-spacing: 0.1em; color: var(--accent-primary);">Commercial
+                        Systems</span>
+                    <h2 style="margin-top: 0.5rem; margin-bottom: var(--spacing-md);">Optimize Peak Corporate Demand
+                    </h2>
+                    <p class="lead-text">Empower commercial structures and production complexes with scalable modular
+                        systems designed to dramatically lower demand charges.</p>
+                    <p>Intelligent, algorithm-driven load balancing monitors power spikes, shifts grid reliance during
+                        peak times, and offers emergency backup power to avoid costly data loss or production downtime.
+                    </p>
+                    <a href="solutions.html" class="btn btn-secondary" style="margin-top: var(--spacing-sm);">Explore
+                        Enterprise Systems</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BATTERY CATEGORIES (3D TILT CARDS) -->
+    <section class="section" style="background: var(--bg-secondary);" aria-label="Battery Categories">
+        <div class="container">
+            <div class="text-center" style="max-width: 600px; margin: 0 auto var(--spacing-xl);">
+                <h2 style="margin-bottom: var(--spacing-sm);">Advanced Storage Chemistry</h2>
+                <p>Choose the optimal storage technology tailored to your specific system demands and operating
+                    conditions.</p>
+            </div>
+
+            <div class="grid-3">
+                <!-- Card 1 -->
+                <div class="tilt-card-container reveal">
+                    <div class="card-3d-tilt">
+                        <div class="card-3d-content">
+                            <!-- SVG Chemistry Graphic 1 -->
+                            <div
+                                style="width: 100%; height: 160px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;">
+                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="50" r="40" stroke="url(#cyan-grad)" stroke-width="2"
+                                        stroke-dasharray="6 4" />
+                                    <circle cx="50" cy="50" r="20" fill="url(#cyan-grad)" fill-opacity="0.2" />
+                                    <circle cx="50" cy="50" r="10" fill="#00f2fe" />
+                                    <path d="M50 10v10M50 80v10M10 50h10M80 50h10" stroke="#00f2fe" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <defs>
+                                        <linearGradient id="cyan-grad" x1="0" y1="0" x2="100" y2="100">
+                                            <stop offset="0%" stop-color="#00f2fe" />
+                                            <stop offset="100%" stop-color="#4facfe" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <h3>Lithium-Ion Core</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--spacing-sm);">
+                                Maximum energy density, fast charging, and compact installation dimensions.</p>
+                            <span
+                                style="font-size: 0.85rem; font-weight: 550; color: var(--accent-primary); display: flex; align-items: center; gap: 4px;">Learn
+                                Specifications ➜</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="tilt-card-container reveal stagger-2">
+                    <div class="card-3d-tilt">
+                        <div class="card-3d-content">
+                            <!-- SVG Chemistry Graphic 2 -->
+                            <div
+                                style="width: 100%; height: 160px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;">
+                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="20" y="20" width="25" height="60" rx="4" stroke="url(#teal-grad)"
+                                        stroke-width="2" />
+                                    <rect x="55" y="20" width="25" height="60" rx="4" stroke="url(#teal-grad)"
+                                        stroke-width="2" />
+                                    <path d="M32.5 10v10M67.5 10v10M45 40h10M45 60h10" stroke="#00ff87"
+                                        stroke-width="2" />
+                                    <circle cx="50" cy="50" r="6" fill="#00ff87" />
+                                    <defs>
+                                        <linearGradient id="teal-grad" x1="0" y1="0" x2="100" y2="100">
+                                            <stop offset="0%" stop-color="#4facfe" />
+                                            <stop offset="100%" stop-color="#00ff87" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <h3>Redox Flow Units</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--spacing-sm);">
+                                Infinite cycle longevity, low thermal load, and modular power adjustments.</p>
+                            <span
+                                style="font-size: 0.85rem; font-weight: 550; color: var(--accent-primary); display: flex; align-items: center; gap: 4px;">Learn
+                                Specifications ➜</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="tilt-card-container reveal stagger-3">
+                    <div class="card-3d-tilt">
+                        <div class="card-3d-content">
+                            <!-- SVG Chemistry Graphic 3 -->
+                            <div
+                                style="width: 100%; height: 160px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;">
+                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="50,15 85,35 85,75 50,95 15,75 15,35" stroke="url(#neon-grad)"
+                                        stroke-width="2" fill="none" />
+                                    <polygon points="50,30 73,43 73,70 50,83 27,70 27,43" fill="url(#neon-grad)"
+                                        fill-opacity="0.15" />
+                                    <circle cx="50" cy="56" r="8" fill="#00f2fe" />
+                                    <defs>
+                                        <linearGradient id="neon-grad" x1="0" y1="0" x2="100" y2="100">
+                                            <stop offset="0%" stop-color="#00f2fe" />
+                                            <stop offset="100%" stop-color="#00ff87" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <h3>Solid-State Vaults</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--spacing-sm);">
+                                Unmatched operating safety buffers, non-flammable chemistry, and extreme temperature
+                                tolerance.</p>
+                            <span
+                                style="font-size: 0.85rem; font-weight: 550; color: var(--accent-primary); display: flex; align-items: center; gap: 4px;">Learn
+                                Specifications ➜</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SMART ENERGY MANAGEMENT & GRID INDEPENDENCE -->
+    <section class="section" aria-label="Smart Energy Management">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div class="reveal">
+                    <!-- SVG Smart Dashboard Mockup -->
+                    <svg viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="width: 100%; filter: drop-shadow(var(--shadow-lg)); border-radius: var(--radius-md);">
+                        <rect width="500" height="350" rx="16" fill="var(--bg-secondary)" />
+                        <rect x="20" y="20" width="460" height="40" rx="8" fill="var(--bg-tertiary)" />
+                        <circle cx="45" cy="40" r="6" fill="#ef4444" />
+                        <circle cx="65" cy="40" r="6" fill="#eab308" />
+                        <circle cx="85" cy="40" r="6" fill="#22c55e" />
+                        <rect x="120" y="32" width="120" height="16" rx="8" fill="var(--border-color)" />
+
+                        <!-- Left Panel Graph -->
+                        <rect x="20" y="80" width="280" height="250" rx="12" fill="var(--bg-tertiary)"
+                            fill-opacity="0.5" />
+                        <path d="M40 280 Q 90 220 140 250 T 240 180 T 280 120" stroke="url(#dash-grad)" stroke-width="3"
+                            stroke-linecap="round" fill="none" />
+                        <circle cx="240" cy="180" r="6" fill="#00f2fe" />
+
+                        <!-- Right Panel Stats -->
+                        <rect x="320" y="80" width="160" height="115" rx="12" fill="var(--bg-tertiary)"
+                            fill-opacity="0.5" />
+                        <text x="340" y="115" fill="var(--text-primary)" font-family="Outfit" font-size="14"
+                            font-weight="500">Peak Load</text>
+                        <text x="340" y="155" fill="#00f2fe" font-family="Outfit" font-size="32" font-weight="600">4.8
+                            kW</text>
+
+                        <rect x="320" y="215" width="160" height="115" rx="12" fill="var(--bg-tertiary)"
+                            fill-opacity="0.5" />
+                        <text x="340" y="250" fill="var(--text-primary)" font-family="Outfit" font-size="14"
+                            font-weight="500">Efficiency</text>
+                        <text x="340" y="290" fill="#00ff87" font-family="Outfit" font-size="32"
+                            font-weight="600">98.2%</text>
+
+                        <defs>
+                            <linearGradient id="dash-grad" x1="0" y1="300" x2="300" y2="100">
+                                <stop offset="0%" stop-color="#00f2fe" />
+                                <stop offset="100%" stop-color="#00ff87" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="reveal stagger-2" style="padding-left: var(--spacing-md);">
+                    <h2>Smart Load Balancing with <br><span
+                            style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Predictive
+                            Analytics</span></h2>
+                    <p class="lead-text">Our embedded software integrates machine-learning predictions to analyze
+                        weather forecasts and usage patterns, dynamically adjusting charging states.</p>
+                    <p>It acts as an autonomous grid controller, shifting loads away from expensive pricing windows and
+                        feeding energy back during utility demand peaks to yield maximum financial return.</p>
+                    <a href="roi.html" class="btn btn-primary" style="margin-top: var(--spacing-sm);">Understand Payback
+                        Model</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GRID INDEPENDENCE BENEFITS -->
+    <section class="section" style="background: var(--bg-secondary);" aria-label="Grid Independence">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div class="reveal">
+                    <h2>Total Energy Sovereignty</h2>
+                    <p class="lead-text">Disconnect from rising power bills and centralized distribution faults. Secure
+                        energy resilience tailored to modern sustainability thresholds.</p>
+                    <p>Our solutions provide full off-grid functionality, seamless solar integration, and active
+                        microgrid isolation to power heavy machinery and home equipment indefinitely.</p>
+
+                    <div style="margin-top: var(--spacing-md);">
+                        <div class="flex-row" style="margin-bottom: var(--spacing-sm);">
+                            <div
+                                style="width: 24px; height: 24px; border-radius: 50%; background: var(--accent-glow); color: var(--accent-primary); display: flex; align-items: center; justify-content: center; font-weight: 550;">
+                                ✓</div>
+                            <span>Active Microgrid Anti-Islanding Protection</span>
+                        </div>
+                        <div class="flex-row" style="margin-bottom: var(--spacing-sm);">
+                            <div
+                                style="width: 24px; height: 24px; border-radius: 50%; background: var(--accent-glow); color: var(--accent-primary); display: flex; align-items: center; justify-content: center; font-weight: 550;">
+                                ✓</div>
+                            <span>Time-of-Use Rate Optimization Algorithm</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal stagger-2">
+                    <!-- SVG Grid Independence Illustration -->
+                    <svg viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%;">
+                        <!-- Dynamic node diagram -->
+                        <circle cx="250" cy="175" r="90" stroke="url(#node-grad)" stroke-width="2"
+                            stroke-dasharray="4 6" />
+                        <circle cx="250" cy="175" r="45" fill="var(--bg-secondary)" stroke="var(--border-color)"
+                            stroke-width="2" />
+                        <path d="M250 160 v30 M235 175 h30" stroke="var(--accent-primary)" stroke-width="3"
+                            stroke-linecap="round" />
+
+                        <!-- Surrounding node endpoints -->
+                        <g class="reveal stagger-1">
+                            <line x1="250" y1="175" x2="150" y2="80" stroke="var(--border-color)" stroke-width="2" />
+                            <circle cx="150" cy="80" r="30" fill="var(--bg-secondary)" stroke="var(--accent-primary)"
+                                stroke-width="2" />
+                            <text x="150" y="85" text-anchor="middle" fill="var(--text-primary)" font-family="Outfit"
+                                font-size="12" font-weight="500">Solar</text>
+                        </g>
+
+                        <g class="reveal stagger-2">
+                            <line x1="250" y1="175" x2="350" y2="80" stroke="var(--border-color)" stroke-width="2" />
+                            <circle cx="350" cy="80" r="30" fill="var(--bg-secondary)" stroke="var(--accent-primary)"
+                                stroke-width="2" />
+                            <text x="350" y="85" text-anchor="middle" fill="var(--text-primary)" font-family="Outfit"
+                                font-size="12" font-weight="500">Battery</text>
+                        </g>
+
+                        <g class="reveal stagger-3">
+                            <line x1="250" y1="175" x2="150" y2="270" stroke="var(--border-color)" stroke-width="2" />
+                            <circle cx="150" cy="270" r="30" fill="var(--bg-secondary)" stroke="var(--accent-secondary)"
+                                stroke-width="2" />
+                            <text x="150" y="275" text-anchor="middle" fill="var(--text-primary)" font-family="Outfit"
+                                font-size="12" font-weight="500">Home</text>
+                        </g>
+
+                        <g class="reveal stagger-4">
+                            <line x1="250" y1="175" x2="350" y2="270" stroke="var(--border-color)" stroke-width="2" />
+                            <circle cx="350" cy="270" r="30" fill="var(--bg-secondary)" stroke="var(--text-muted)"
+                                stroke-width="2" stroke-dasharray="3 3" />
+                            <text x="350" y="275" text-anchor="middle" fill="var(--text-muted)" font-family="Outfit"
+                                font-size="12" font-weight="500">Grid</text>
+                        </g>
+
+                        <defs>
+                            <linearGradient id="node-grad" x1="0" y1="0" x2="500" y2="350">
+                                <stop offset="0%" stop-color="#00f2fe" />
+                                <stop offset="100%" stop-color="#00ff87" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI TIMELINE PREVIEW -->
+    <section class="section" aria-label="ROI Preview">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div class="reveal">
+                    <!-- SVG Chart representing ROI -->
+                    <svg viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%;">
+                        <rect width="500" height="350" rx="16" fill="var(--bg-secondary)" stroke="var(--border-color)"
+                            stroke-width="1" />
+                        <path d="M50 300 H450 M50 50 V300" stroke="var(--border-color)" stroke-width="2" />
+                        <!-- Grid lines -->
+                        <line x1="50" y1="237" x2="450" y2="237" stroke="var(--border-color)" stroke-width="1"
+                            stroke-dasharray="2 4" />
+                        <line x1="50" y1="175" x2="450" y2="175" stroke="var(--border-color)" stroke-width="1"
+                            stroke-dasharray="2 4" />
+                        <line x1="50" y1="112" x2="450" y2="112" stroke="var(--border-color)" stroke-width="1"
+                            stroke-dasharray="2 4" />
+                        <!-- Payback savings line graph -->
+                        <path d="M50 280 L130 250 L210 180 L290 100 L370 70 L450 55" stroke="url(#roi-grad)"
+                            stroke-width="4" stroke-linecap="round" fill="none" />
+                        <!-- Circles on coordinates -->
+                        <circle cx="290" cy="100" r="6" fill="#00ff87" />
+                        <text x="290" y="85" text-anchor="middle" fill="var(--text-primary)" font-family="Outfit"
+                            font-size="12" font-weight="550">Breakeven: Yr 4</text>
+                        <defs>
+                            <linearGradient id="roi-grad" x1="50" y1="280" x2="450" y2="55">
+                                <stop offset="0%" stop-color="#00f2fe" />
+                                <stop offset="100%" stop-color="#00ff87" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="reveal stagger-2" style="padding-left: var(--spacing-md);">
+                    <h2>Rapid Financial Payback</h2>
+                    <p class="lead-text">Capital storage expenditures recover energy values rapidly. Cut utility costs
+                        by over 70% using self-supply solar routing.</p>
+                    <p>With immediate peak-shaving savings, regional battery tax rebates, and local net-metering
+                        payments, systems completely offset setup costs within 4 to 6 years of configuration.</p>
+                    <a href="roi.html" class="btn btn-secondary">Detailed Financial Analysis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTALLATION PROCESS (HORIZONTAL TIMELINE) -->
+    <section class="section" style="background: var(--bg-secondary);" aria-label="Installation Process">
+        <div class="container">
+            <div class="text-center" style="max-width: 600px; margin: 0 auto var(--spacing-xl);">
+                <h2>Deploying Your Grid Battery</h2>
+                <p>A streamlined, certified path from site auditing to functional grid-tied operation.</p>
+            </div>
+
+            <div class="timeline-horizontal-container">
+                <div class="timeline-progress-line">
+                    <div class="timeline-progress-fill"></div>
+                </div>
+                <div class="timeline-steps">
+                    <!-- Step 1 -->
+                    <div class="timeline-step">
+                        <div class="timeline-node">1</div>
+                        <h4 style="margin-top: 0.5rem; margin-bottom: 0.25rem;">Site Consultation</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Detailed consumption audit and sizing
+                            projection.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="timeline-step">
+                        <div class="timeline-node">2</div>
+                        <h4 style="margin-top: 0.5rem; margin-bottom: 0.25rem;">Custom Design</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Sizing capacity matrices and drawing
+                            site connection layout.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="timeline-step">
+                        <div class="timeline-node">3</div>
+                        <h4 style="margin-top: 0.5rem; margin-bottom: 0.25rem;">Installation</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Mounting structural battery racks and
+                            wiring electronics.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="timeline-step">
+                        <div class="timeline-node">4</div>
+                        <h4 style="margin-top: 0.5rem; margin-bottom: 0.25rem;">Commissioning</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Booting the local OS and integrating
+                            grid backup settings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS (3D COVERFLOW) -->
+    <section class="section" aria-label="Client Testimonials">
+        <div class="container">
+            <div class="text-center" style="max-width: 600px; margin: 0 auto var(--spacing-lg);">
+                <h2>What Our Partners Say</h2>
+                <p>Trusted by industrial facility administrators and microgrid operations worldwide.</p>
+            </div>
+
+            <div class="coverflow-viewport">
+                <div class="coverflow-container">
+                    <!-- Card 1 -->
+                    <div class="coverflow-card">
+                        <div style="font-size: 1.5rem; color: var(--accent-primary); line-height: 1;">“</div>
+                        <p
+                            style="font-style: italic; font-size: 1.05rem; flex-grow: 1; display: flex; align-items: center;">
+                            "Integrating their Lithium rack dropped our commercial peak demand charges by 45%. The
+                            payback period is looking even faster than estimated."</p>
+                        <div>
+                            <h4 style="margin-bottom: 0;">Arthur Pendelton</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">Operations
+                                Director, Apex Logistics</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="coverflow-card">
+                        <div style="font-size: 1.5rem; color: var(--accent-primary); line-height: 1;">“</div>
+                        <p
+                            style="font-style: italic; font-size: 1.05rem; flex-grow: 1; display: flex; align-items: center;">
+                            "The off-grid battery solution runs our remote research station without a glitch. The system
+                            integration with solar is flawless."</p>
+                        <div>
+                            <h4 style="margin-bottom: 0;">Dr. Helen Vance</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">Lead Scientist,
+                                Polar Labs</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="coverflow-card">
+                        <div style="font-size: 1.5rem; color: var(--accent-primary); line-height: 1;">“</div>
+                        <p
+                            style="font-style: italic; font-size: 1.05rem; flex-grow: 1; display: flex; align-items: center;">
+                            "Absolute backup security. When the localized storm disabled primary distribution lines, our
+                            facility continued operations instantly."</p>
+                        <div>
+                            <h4 style="margin-bottom: 0;">Marcus Brody</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">Facilities
+                                Manager, Vanguard Health</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coverflow-controls">
+                <button id="coverflow-prev" class="btn btn-secondary" style="padding: 0.6rem 1.25rem;"
+                    aria-label="Previous Testimonial">➜</button>
+                <button id="coverflow-next" class="btn btn-secondary" style="padding: 0.6rem 1.25rem;"
+                    aria-label="Next Testimonial">➜</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION (ACCORDION) -->
+    <section class="section" style="background: var(--bg-secondary);" aria-label="Frequently Asked Questions">
+        <div class="container" style="max-width: 800px;">
+            <div class="text-center" style="margin-bottom: var(--spacing-xl);">
+                <h2>Answers to Common Questions</h2>
+                <p>Learn more about operations, hardware configuration, and warranty cycles.</p>
+            </div>
+
+            <div class="accordion-group">
+                <!-- Item 1 -->
+                <div class="accordion-item">
+                    <button class="accordion-trigger" aria-expanded="false">
+                        <span>What is the expected operating life of the cells?</span>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="accordion-content">
+                            Our standard lithium batteries are warrantied for 6,000 complete cycles at 90% Depth of
+                            Discharge, equivalent to approximately 15 years of daily cycling service. Flow systems
+                            extend further, achieving over 20,000 cycles.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="accordion-item">
+                    <button class="accordion-trigger" aria-expanded="false">
+                        <span>How does smart energy management shift load charges?</span>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="accordion-content">
+                            The system monitors grid prices in real-time. It charges the battery storage units when
+                            rates are low (usually overnight or midday via solar) and discharges to power your systems
+                            when utility pricing is high.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="accordion-item">
+                    <button class="accordion-trigger" aria-expanded="false">
+                        <span>Are safety standard certificates included?</span>
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="accordion-content">
+                            Yes, all our battery installations are fully certified to international standards including
+                            UL 9540 (energy storage systems safety), UL 1973 (battery packs safety), and CE
+                            certifications.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section" style="text-align: center; overflow: hidden;" aria-label="Consultation Request">
+        <!-- background overlay glow -->
+        <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70%; height: 70%; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%); pointer-events: none; z-index: 0;">
+        </div>
+
+        <div class="container" style="position: relative; z-index: 1; max-width: 700px;">
+            <h2 class="reveal">Power Your Autonomy Today</h2>
+            <p class="lead-text reveal stagger-1">Consult with our energy architects to calculate utility savings and
+                select the optimal storage modules.</p>
+            <a href="contact.html" class="btn btn-primary reveal stagger-2"
+                style="font-size: 1.1rem; padding: 1rem 2.25rem; animation: breathing-glow 3s infinite alternate;">Request
+                a Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom: var(--spacing-sm);">
+                        <div class="logo-icon"></div>
+                        <span>VoltAmpere</span>
+                    </a>
+                    <p>Pioneering modular energy storage and grid autonomy systems for home and enterprise applications.
+                        Built for the clean energy grid of 2026.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="LinkedIn">LN</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">TW</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">IG</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="solutions.html">Residential Storage</a></li>
+                        <li><a href="solutions.html">Commercial Storage</a></li>
+                        <li><a href="solutions.html">Industrial Racks</a></li>
+                        <li><a href="solutions.html">Solar Microgrids</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="resources.html">Buying Guide</a></li>
+                        <li><a href="resources.html">Installation Specs</a></li>
+                        <li><a href="resources.html">White Papers</a></li>
+                        <li><a href="resources.html">Energy Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Stay Informed</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Subscribe to receive clean energy updates
+                        and financial grid insights.</p>
+                    <form class="newsletter-form" action="#" method="POST" aria-label="Newsletter Subscription">
+                        <input type="email" placeholder="Your email address" class="newsletter-input" required
+                            aria-label="Email address">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.25rem;">➜</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 VoltAmpere Systems. All rights reserved.</p>
+                <div style="display: flex; gap: var(--spacing-md);">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/three-hero.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>

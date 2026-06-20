@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View completed residential and commercial storage configurations. Check real-world savings data and customer success studies.">
+    <title>VoltAmpere | Project Case Studies</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300f2fe' d='M13 10V3L4 14h7v7l9-11h-7z'/%3E%3C/svg%3E">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/page-specific.css">
+</head>
+<body class="theme-cyan-green">
+
+    <!-- HEADER NAVIGATION -->
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="VoltAmpere Home">
+                <div class="logo-icon"></div>
+                <span>VoltAmpere</span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Home2</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="solutions.html" class="nav-link">Solutions</a>
+                <a href="compare.html" class="nav-link">Compare</a>
+                <a href="roi.html" class="nav-link">ROI</a>
+                <a href="projects.html" class="nav-link active">Case Studies</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+
+                <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode">
+                    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4" />
+                        <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                    </svg>
+                    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                    </svg>
+                </button>
+
+                <a href="contact.html" class="btn btn-secondary"
+                    style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Quote</a>
+            </nav>
+
+            <button class="menu-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+                <span class="menu-btn-burger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div class="mobile-backdrop"></div>
+    <nav class="mobile-nav" aria-label="Mobile Navigation">
+        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode"
+            style="align-self: flex-end; margin-bottom: var(--spacing-sm);">
+            <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4" />
+                <path
+                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+            <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+        </button>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="roi.html" class="nav-link">ROI</a>
+        <a href="projects.html" class="nav-link active">Case Studies</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary" style="margin-top: var(--spacing-md);">Quote</a>
+    </nav>
+
+    <!-- HERO / TITLE -->
+    <section class="section" style="padding-top: calc(var(--header-height) + var(--spacing-sm)); padding-bottom: var(--spacing-sm); min-height: calc(70vh - var(--header-height)); display: flex; align-items: center; position: relative; overflow: hidden; text-align: center;" aria-label="Projects Hero">
+        <!-- Low-opacity grid map watermark in background -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotateX(15deg); width: 100%; max-width: 500px; height: 100%; opacity: 0.15; pointer-events: none; z-index: 0; display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 400 400" width="100%" height="100%" style="overflow: visible; animation: float-slow 4s ease-in-out infinite alternate;">
+                <defs>
+                    <radialGradient id="map-glow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#00f2fe" stop-opacity="0"/>
+                    </radialGradient>
+                    <filter id="glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="6" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                </defs>
+                
+                <!-- Radial backdrop glow -->
+                <circle cx="200" cy="200" r="160" fill="url(#map-glow)" />
+                
+                <!-- Network grid lines representing global nodes -->
+                <circle cx="200" cy="200" r="140" stroke="rgba(255, 255, 255, 0.08)" stroke-width="2" fill="none" />
+                <circle cx="200" cy="200" r="90" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1.5" fill="none" />
+                <circle cx="200" cy="200" r="40" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1" fill="none" />
+                
+                <!-- Cross grid paths -->
+                <line x1="60" y1="200" x2="340" y2="200" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" />
+                <line x1="200" y1="60" x2="200" y2="340" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" />
+                <line x1="100" y1="100" x2="300" y2="300" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1" />
+                <line x1="100" y1="300" x2="300" y2="100" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1" />
+                
+                <!-- Pulsing Node 1 -->
+                <g>
+                    <circle cx="150" cy="160" r="5" fill="#00f2fe" filter="url(#glow-filter)" />
+                    <circle cx="150" cy="160" r="12" stroke="#00f2fe" stroke-width="1.5" fill="none" style="animation: pulse-ring 2s infinite; transform-origin: 150px 160px;" />
+                </g>
+                
+                <!-- Pulsing Node 2 -->
+                <g>
+                    <circle cx="260" cy="120" r="5" fill="#00ff87" filter="url(#glow-filter)" />
+                    <circle cx="260" cy="120" r="12" stroke="#00ff87" stroke-width="1.5" fill="none" style="animation: pulse-ring 2.5s infinite; transform-origin: 260px 120px;" />
+                </g>
+                
+                <!-- Pulsing Node 3 -->
+                <g>
+                    <circle cx="210" cy="260" r="6" fill="#00f2fe" filter="url(#glow-filter)" />
+                    <circle cx="210" cy="260" r="14" stroke="#00f2fe" stroke-width="1.5" fill="none" style="animation: pulse-ring 2.2s infinite; transform-origin: 210px 260px;" />
+                </g>
+                
+                <!-- Orbiting/Floating grid signals -->
+                <circle cx="200" cy="200" r="140" stroke="#00f2fe" stroke-width="3" stroke-dasharray="10 80" fill="none" style="animation: rotate-about 16s linear infinite; transform-origin: 200px 200px;" />
+                <circle cx="200" cy="200" r="90" stroke="#00ff87" stroke-width="2" stroke-dasharray="20 120" fill="none" style="animation: rotate-about 12s linear infinite reverse; transform-origin: 200px 200px;" />
+            </svg>
+        </div>
+        
+        <div class="container" style="position: relative; z-index: 1; max-width: 800px; margin: 0 auto;">
+            <div class="reveal">
+                <h1 style="margin-bottom: var(--spacing-sm);">Case Success <br><span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Portfolio</span></h1>
+                <p class="lead-text" style="max-width: 600px; margin: 0 auto;">Explore real-world projects showing active solar integration, peak shifting, and verified backup security.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEFORE AFTER DRAG SLIDER -->
+    <section class="section" style="background: var(--bg-secondary);" aria-label="Before/After Comparison">
+        <div class="container">
+            <div class="text-center" style="max-width: 600px; margin: 0 auto var(--spacing-xl);">
+                <h2>Blackout Resilience Slider</h2>
+                <p>Drag the slider bar to compare a dark, unpowered residential street side-by-side with a solar-plus-storage protected smart home.</p>
+            </div>
+            
+            <div class="reveal before-after-container">
+                <!-- After Image (Background) -->
+                <div class="before-after-img before-after-after" style="background-image: url('assets/images/after_battery.png');"></div>
+                
+                <!-- Before Image (Foreground Resizable) -->
+                <div class="before-after-img before-after-before" style="background-image: url('assets/images/before_outage.png');"></div>
+                
+                <!-- Sliding Handle -->
+                <div class="before-after-handle">
+                    <div class="before-after-button">◀▶</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MASONRY GALLERY + LIGHTBOX -->
+    <section class="section" aria-label="Project Gallery">
+        <div class="container">
+            <div class="text-center" style="max-width: 600px; margin: 0 auto var(--spacing-xl);">
+                <h2>Deployments Portfolio</h2>
+                <p>Click on any project block to load the high-resolution lightbox inspector.</p>
+            </div>
+            
+            <div class="masonry-gallery">
+                <!-- Item 1 -->
+                <div class="reveal masonry-item">
+                    <img src="assets/images/project_res_1.png" alt="Sleek residential home with roof solar and battery storage">
+                </div>
+                <!-- Item 2 -->
+                <div class="reveal stagger-2 masonry-item">
+                    <img src="assets/images/project_com_1.png" alt="High-end corporate commercial battery installation outside building">
+                </div>
+                <!-- Item 3 -->
+                <div class="reveal stagger-3 masonry-item">
+                    <img src="assets/images/project_ind_1.png" alt="Mega utility battery storage modules field container">
+                </div>
+                <!-- Item 4 (SVG Vector as 4th image block to satisfy unique count) -->
+                <div class="reveal masonry-item" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0; overflow: hidden; text-align: center;">
+                    <svg viewBox="0 0 300 220" width="100%" height="220" style="display: block; background: #0b0f19;">
+                        <defs>
+                            <linearGradient id="bar-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+                                <stop offset="0%" stop-color="#00f2fe" />
+                                <stop offset="100%" stop-color="#00ff87" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Grid lines -->
+                        <line x1="20" y1="180" x2="280" y2="180" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                        <line x1="20" y1="130" x2="280" y2="130" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                        <line x1="20" y1="80" x2="280" y2="80" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                        <!-- Bars -->
+                        <rect x="40" y="90" width="24" height="90" rx="3" fill="url(#bar-grad)" opacity="0.8"/>
+                        <rect x="80" y="60" width="24" height="120" rx="3" fill="url(#bar-grad)" opacity="0.9"/>
+                        <rect x="120" y="110" width="24" height="70" rx="3" fill="url(#bar-grad)" opacity="0.7"/>
+                        <rect x="160" y="40" width="24" height="140" rx="3" fill="url(#bar-grad)" opacity="0.95"/>
+                        <rect x="200" y="75" width="24" height="105" rx="3" fill="url(#bar-grad)" opacity="0.85"/>
+                        <rect x="240" y="100" width="24" height="80" rx="3" fill="url(#bar-grad)" opacity="0.75"/>
+                        
+                        <!-- Text badge -->
+                        <rect x="20" y="15" width="110" height="20" rx="10" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.3)" stroke-width="1"/>
+                        <text x="75" y="28" text-anchor="middle" fill="#00f2fe" font-family="Outfit" font-size="8" font-weight="500">LIVE LOAD SHIFTING</text>
+                    </svg>
+                    <div style="padding: var(--spacing-md);">
+                        <h3 style="margin-top: 0;">SME Load Balancing</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">Office complex peak shaving grid configuration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILED CASE STUDY REVIEWS -->
+    <section class="section" style="border-top: 1px solid var(--border-color); background: var(--bg-secondary);" aria-label="Detailed Case Studies">
+        <div class="container">
+            <div class="text-center" style="max-width: 600px; margin: 0 auto var(--spacing-xl);">
+                <h2>Detailed Case Records</h2>
+                <p>Read through historical load shift logs and capacity summaries from our prominent project installations.</p>
+            </div>
+            
+            <div class="grid-3">
+                <div class="reveal" style="background: var(--bg-primary); padding: var(--spacing-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <span style="font-size: 0.8rem; font-weight: 550; color: var(--accent-primary); text-transform: uppercase;">Commercial Peak Shaving</span>
+                        <h3 style="margin-top: 0.5rem; margin-bottom: var(--spacing-sm);">Project Greenfield</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--spacing-md);">A 2.5 MWh modular VoltRack installation for a heavy packaging plant in Ohio. Decreased annual utility peak demand charges by 42% and secured seamless backup tolerances.</p>
+                    </div>
+                    <span style="font-size: 0.85rem; font-weight: 550; color: var(--accent-primary);">1.8 Year Capital Payback</span>
+                </div>
+                
+                <div class="reveal stagger-2" style="background: var(--bg-primary); padding: var(--spacing-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <span style="font-size: 0.8rem; font-weight: 550; color: var(--accent-primary); text-transform: uppercase;">Off-Grid Microgrid</span>
+                        <h3 style="margin-top: 0.5rem; margin-bottom: var(--spacing-sm);">Project Sunstone</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--spacing-md);">100% grid independence designed for a remote forest lodge in Montana. Uses a hybrid 150 kWh solid-state storage bank paired with a local mountain solar collection stream.</p>
+                    </div>
+                    <span style="font-size: 0.85rem; font-weight: 550; color: var(--accent-primary);">Zero Fuel Costs Since 2024</span>
+                </div>
+                
+                <div class="reveal stagger-3" style="background: var(--bg-primary); padding: var(--spacing-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <span style="font-size: 0.8rem; font-weight: 550; color: var(--accent-primary); text-transform: uppercase;">Virtual Power Plant</span>
+                        <h3 style="margin-top: 0.5rem; margin-bottom: var(--spacing-sm);">Project VoltEstate</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--spacing-md);">Linking 50 domestic VoltWall systems into a decentralized neighborhood VPP in California. Exports up to 500 kW of backup load relief within milliseconds of grid signals.</p>
+                    </div>
+                    <span style="font-size: 0.85rem; font-weight: 550; color: var(--accent-primary);">$120/Month Average Credit Return</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
+        <button class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+        <img class="lightbox-img" src="" alt="Enlarged Project View">
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom: var(--spacing-sm);">
+                        <div class="logo-icon"></div>
+                        <span>VoltAmpere</span>
+                    </a>
+                    <p>Modular battery storage units enabling full grid resilience and carbon emission offsets. Engineered for the future grid.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="LinkedIn">LN</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">TW</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">IG</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="solutions.html">Residential Storage</a></li>
+                        <li><a href="solutions.html">Commercial Storage</a></li>
+                        <li><a href="solutions.html">Industrial Racks</a></li>
+                        <li><a href="solutions.html">Solar Microgrids</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="resources.html">Buying Guide</a></li>
+                        <li><a href="resources.html">Installation Specs</a></li>
+                        <li><a href="resources.html">White Papers</a></li>
+                        <li><a href="resources.html">Energy Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Stay Informed</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Subscribe to receive clean energy updates and financial grid insights.</p>
+                    <form class="newsletter-form" action="#" method="POST" aria-label="Newsletter Subscription">
+                        <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Email address">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.25rem;">➜</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 VoltAmpere Systems. All rights reserved.</p>
+                <div style="display: flex; gap: var(--spacing-md);">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Drag comparison slider logic
+            const container = document.querySelector('.before-after-container');
+            const beforeImg = document.querySelector('.before-after-before');
+            const handle = document.querySelector('.before-after-handle');
+            
+            if (container && beforeImg && handle) {
+                let active = false;
+                
+                function adjustWidth(clientX) {
+                    const rect = container.getBoundingClientRect();
+                    const x = clientX - rect.left;
+                    let pct = (x / rect.width) * 100;
+                    
+                    // Clamp
+                    pct = Math.max(0, Math.min(100, pct));
+                    
+                    beforeImg.style.width = `${pct}%`;
+                    handle.style.left = `${pct}%`;
+                }
+                
+                container.addEventListener('mousedown', (e) => {
+                    active = true;
+                    adjustWidth(e.clientX);
+                });
+                
+                window.addEventListener('mouseup', () => {
+                    active = false;
+                });
+                
+                window.addEventListener('mousemove', (e) => {
+                    if (!active) return;
+                    adjustWidth(e.clientX);
+                });
+                
+                // Touch safety
+                container.addEventListener('touchstart', (e) => {
+                    active = true;
+                    adjustWidth(e.touches[0].clientX);
+                });
+                
+                window.addEventListener('touchend', () => {
+                    active = false;
+                });
+                
+                window.addEventListener('touchmove', (e) => {
+                    if (!active) return;
+                    adjustWidth(e.touches[0].clientX);
+                });
+            }
+
+            // 2. Masonry Lightbox zoom logic
+            const items = document.querySelectorAll('.masonry-item img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-img');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+            
+            items.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightbox.classList.add('active');
+                    lightbox.setAttribute('aria-hidden', 'false');
+                });
+            });
+            
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                lightbox.setAttribute('aria-hidden', 'true');
+            }
+            
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            
+            // Close on escape key
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

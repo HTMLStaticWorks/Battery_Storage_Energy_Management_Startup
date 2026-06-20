@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact our energy engineering headquarters. Request a quote or schedule a free site consultation.">
+    <title>VoltAmpere | Contact Our Office</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300f2fe' d='M13 10V3L4 14h7v7l9-11h-7z'/%3E%3C/svg%3E">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/page-specific.css">
+    
+    <style>
+        /* Map bouncing pin animation */
+        @keyframes bounce-pin {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-12px); }
+        }
+        
+        .bounce-pin-group {
+            animation: bounce-pin 1s ease-in-out infinite alternate;
+            transform-origin: 250px 120px;
+        }
+        
+        /* Form loading states */
+        .btn-submit.loading {
+            pointer-events: none;
+            opacity: 0.8;
+            color: transparent !important;
+        }
+        .btn-submit.loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffffff;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: form-spin 0.8s linear infinite;
+        }
+        @keyframes form-spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="theme-cyan-green">
+
+    <!-- HEADER NAVIGATION -->
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="VoltAmpere Home">
+                <div class="logo-icon"></div>
+                <span>VoltAmpere</span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="home2.html" class="nav-link">Home2</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="solutions.html" class="nav-link">Solutions</a>
+                <a href="compare.html" class="nav-link">Compare</a>
+                <a href="roi.html" class="nav-link">ROI</a>
+                <a href="projects.html" class="nav-link">Case Studies</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+
+                <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode">
+                    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4" />
+                        <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                    </svg>
+                    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                    </svg>
+                </button>
+
+                <a href="contact.html" class="btn btn-secondary"
+                    style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Quote</a>
+            </nav>
+
+            <button class="menu-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+                <span class="menu-btn-burger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div class="mobile-backdrop"></div>
+    <nav class="mobile-nav" aria-label="Mobile Navigation">
+        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode"
+            style="align-self: flex-end; margin-bottom: var(--spacing-sm);">
+            <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4" />
+                <path
+                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+            <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+        </button>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="roi.html" class="nav-link">ROI</a>
+        <a href="projects.html" class="nav-link">Case Studies</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <a href="contact.html" class="btn btn-primary" style="margin-top: var(--spacing-md);">Quote</a>
+    </nav>
+
+    <!-- HERO / TITLE -->
+    <section class="section" style="padding-top: calc(var(--header-height) + var(--spacing-sm)); padding-bottom: var(--spacing-sm); min-height: calc(85vh - var(--header-height)); display: flex; align-items: center;" aria-label="Contact Hero">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div class="reveal">
+                    <h1 style="margin-bottom: var(--spacing-sm);">Connect With <br><span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Our Team</span></h1>
+                    <p class="lead-text" style="margin-bottom: var(--spacing-md);">Schedule an energy load assessment, request hardware specifications, or reach out to our service branches.</p>
+                    
+                    <!-- Scaled-down Transmitter SVG -->
+                    <div style="height: 180px; width: 100%; max-width: 250px; display: flex; align-items: center; justify-content: center; perspective: 800px; margin-top: var(--spacing-sm);">
+                        <svg viewBox="0 0 400 400" width="100%" height="100%" style="overflow: visible; transform: rotateX(15deg); animation: float-slow 4s ease-in-out infinite alternate;">
+                            <defs>
+                                <linearGradient id="contact-grad" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#00f2fe"/>
+                                    <stop offset="100%" stop-color="#00ff87"/>
+                                </linearGradient>
+                                <filter id="contact-glow" x="-30%" y="-30%" width="160%" height="160%">
+                                    <feGaussianBlur stdDeviation="8" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                            </defs>
+                            
+                            <!-- Expanding waves -->
+                            <circle cx="200" cy="200" r="150" stroke="#00f2fe" stroke-width="1.5" stroke-dasharray="6 6" fill="none" opacity="0.15" style="animation: rotate-about 30s linear infinite; transform-origin: 200px 200px;" />
+                            
+                            <!-- Pulsing radial signal waves -->
+                            <circle cx="200" cy="200" r="120" stroke="url(#contact-grad)" stroke-width="2" fill="none" style="animation: pulse-ring 3s infinite; transform-origin: 200px 200px;" />
+                            <circle cx="200" cy="200" r="80" stroke="url(#contact-grad)" stroke-width="3" fill="none" style="animation: pulse-ring 3s infinite 1s; transform-origin: 200px 200px;" />
+                            <circle cx="200" cy="200" r="40" stroke="url(#contact-grad)" stroke-width="4" fill="none" style="animation: pulse-ring 3s infinite 2s; transform-origin: 200px 200px;" />
+                            
+                            <!-- Center transmitter core -->
+                            <circle cx="200" cy="200" r="24" fill="url(#contact-grad)" filter="url(#contact-glow)" />
+                            <circle cx="200" cy="200" r="12" fill="#04121f" />
+                            <circle cx="200" cy="200" r="6" fill="#00ff87" />
+                            
+                            <!-- Emitting particle flashes -->
+                            <circle cx="200" cy="80" r="4" fill="#00f2fe" filter="url(#contact-glow)" />
+                            <circle cx="200" cy="320" r="4" fill="#00f2fe" filter="url(#contact-glow)" />
+                            <circle cx="80" cy="200" r="4" fill="#00ff87" filter="url(#contact-glow)" />
+                            <circle cx="320" cy="200" r="4" fill="#00ff87" filter="url(#contact-glow)" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Contact Form in Hero -->
+                <div class="reveal stagger-2" id="form-container" style="background: var(--bg-secondary); padding: var(--spacing-md); border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); max-width: 420px; width: 100%; margin: 0 auto;">
+                    <form id="contact-form" action="#" method="POST" aria-label="Contact Form">
+                        <div class="form-group" style="margin-bottom: var(--spacing-sm);">
+                            <input type="text" id="name" class="form-input" placeholder=" " required aria-label="Full Name" style="padding: 1rem 0.75rem 0.4rem;">
+                            <label for="name" class="form-label" style="font-size: 0.9rem;">Full Name</label>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: var(--spacing-sm);">
+                            <input type="email" id="email" class="form-input" placeholder=" " required aria-label="Email Address" style="padding: 1rem 0.75rem 0.4rem;">
+                            <label for="email" class="form-label" style="font-size: 0.9rem;">Email Address</label>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: var(--spacing-sm);">
+                            <select id="topic" class="form-input" style="padding: 0.6rem 0.5rem; font-size: 0.9rem;" required aria-label="Inquiry Topic">
+                                <option value="" disabled selected hidden>Inquiry Type</option>
+                                <option value="residential">Residential Wall Battery</option>
+                                <option value="commercial">Commercial Modular Storage</option>
+                                <option value="utility">Grid-Scale Industrial Racks</option>
+                                <option value="general">General Partnerships</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: var(--spacing-sm);">
+                            <textarea id="message" class="form-input" placeholder=" " required aria-label="Your Message" style="min-height: 80px; padding-top: 1.2rem; font-size: 0.9rem;"></textarea>
+                            <label for="message" class="form-label" style="font-size: 0.9rem; top: 0.8rem;">Message details...</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-submit" style="width: 100%; height: 44px; font-size: 0.9rem;">Send Consultation Request</button>
+                    </form>
+                    
+                    <!-- Hidden Success message -->
+                    <div id="success-message" style="display: none; text-align: center; padding: var(--spacing-md) 0;">
+                        <div class="form-success-icon">
+                            <svg viewBox="0 0 52 52" style="width: 48px; height: 48px;">
+                                <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                                <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                            </svg>
+                        </div>
+                        <h3>Request Received!</h3>
+                        <p style="color: var(--text-muted); margin-top: var(--spacing-xs); font-size: 0.85rem;">An energy architect will reach out to analyze your load data shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO SECTIONS -->
+    <section class="section" style="background: var(--bg-secondary);" aria-label="Contact Channels">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <!-- Left: Info Details -->
+                <div class="reveal" style="display: flex; flex-direction: column; gap: var(--spacing-lg);">
+                    <!-- Office Info Card -->
+                    <div style="background: var(--bg-primary); padding: var(--spacing-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                        <h3>Global Headquarters</h3>
+                        <p style="margin-bottom: 0.5rem;">⚡ <strong>Address:</strong> 120 Innovation Drive, Suite 400, San Francisco, CA</p>
+                        <p style="margin-bottom: 0.5rem;">⚡ <strong>Working Hours:</strong> Mon - Fri, 9:00 AM - 6:00 PM PST</p>
+                        <p style="margin-bottom: 0;">⚡ <strong>Email Support:</strong> design@voltampere.com</p>
+                    </div>
+                </div>
+                
+                <!-- Right: Map -->
+                <div class="reveal stagger-2" style="height: 250px; position: relative;">
+                    <svg viewBox="0 0 500 250" style="width: 100%; height: 100%; background: var(--bg-primary); border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                        <rect width="500" height="250" fill="var(--bg-secondary)"/>
+                        <!-- Road grids -->
+                        <line x1="50" y1="0" x2="50" y2="250" stroke="var(--border-color)" stroke-width="12"/>
+                        <line x1="280" y1="0" x2="280" y2="250" stroke="var(--border-color)" stroke-width="20"/>
+                        <line x1="0" y1="130" x2="500" y2="130" stroke="var(--border-color)" stroke-width="16"/>
+                        
+                        <!-- Headquarters location bubble -->
+                        <rect x="180" y="40" width="80" height="50" rx="6" fill="var(--bg-primary)" stroke="var(--accent-primary)" stroke-width="1.5"/>
+                        <text x="220" y="70" text-anchor="middle" fill="var(--text-primary)" font-family="Outfit" font-size="10" font-weight="550">HQ OFFICE</text>
+                        
+                        <!-- Bouncing Location Pin Group -->
+                        <g class="bounce-pin-group">
+                            <path d="M280 85 C270 85, 265 95, 280 120 C295 95, 290 85, 280 85 Z" fill="#ef4444"/>
+                            <circle cx="280" cy="95" r="4" fill="#ffffff"/>
+                            <ellipse cx="280" cy="120" rx="8" ry="3" fill="#000000" fill-opacity="0.25"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGIONAL OFFICES & SUPPORT HUBS -->
+    <section class="section" style="border-top: 1px solid var(--border-color); background: var(--bg-primary);" aria-label="Regional Offices">
+        <div class="container">
+            <div class="text-center" style="max-width: 600px; margin: 0 auto var(--spacing-xl);">
+                <h2>Regional Support & Offices</h2>
+                <p>Reach out to our global divisions for localized logistics, compliance queries, and regional installation support.</p>
+            </div>
+            
+            <div class="grid-3">
+                <!-- Hub 1 -->
+                <div class="reveal" style="background: var(--bg-secondary); padding: var(--spacing-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: var(--spacing-xs);">🇺🇸</div>
+                    <h3 style="margin-bottom: var(--spacing-xs);">North America Hub</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--spacing-md);">Denver Innovation Park, Suite 105, Denver, CO</p>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.25rem;">📞 <strong>Phone:</strong> +1 (303) 555-0192</p>
+                    <p style="font-size: 0.85rem; margin-bottom: 0;">✉️ <strong>Email:</strong> support.na@voltampere.com</p>
+                </div>
+                
+                <!-- Hub 2 -->
+                <div class="reveal stagger-2" style="background: var(--bg-secondary); padding: var(--spacing-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: var(--spacing-xs);">🇩🇪</div>
+                    <h3 style="margin-bottom: var(--spacing-xs);">European Technical Branch</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--spacing-md);">Maximilianstrasse 45, 80539 München, Germany</p>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.25rem;">📞 <strong>Phone:</strong> +49 (89) 2019-3821</p>
+                    <p style="font-size: 0.85rem; margin-bottom: 0;">✉️ <strong>Email:</strong> support.eu@voltampere.com</p>
+                </div>
+                
+                <!-- Hub 3 -->
+                <div class="reveal stagger-3" style="background: var(--bg-secondary); padding: var(--spacing-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: var(--spacing-xs);">🇦🇺</div>
+                    <h3 style="margin-bottom: var(--spacing-xs);">Asia-Pacific Logistics</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--spacing-md);">George Street 200, Sydney NSW 2000, Australia</p>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.25rem;">📞 <strong>Phone:</strong> +61 (2) 9028-1092</p>
+                    <p style="font-size: 0.85rem; margin-bottom: 0;">✉️ <strong>Email:</strong> support.apac@voltampere.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom: var(--spacing-sm);">
+                        <div class="logo-icon"></div>
+                        <span>VoltAmpere</span>
+                    </a>
+                    <p>Modular battery storage units enabling full grid resilience and carbon emission offsets. Engineered for the future grid.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="LinkedIn">LN</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">TW</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">IG</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="solutions.html">Residential Storage</a></li>
+                        <li><a href="solutions.html">Commercial Storage</a></li>
+                        <li><a href="solutions.html">Industrial Racks</a></li>
+                        <li><a href="solutions.html">Solar Microgrids</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="resources.html">Buying Guide</a></li>
+                        <li><a href="resources.html">Installation Specs</a></li>
+                        <li><a href="resources.html">White Papers</a></li>
+                        <li><a href="resources.html">Energy Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Stay Informed</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Subscribe to receive clean energy updates and financial grid insights.</p>
+                    <form class="newsletter-form" action="#" method="POST" aria-label="Newsletter Subscription">
+                        <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Email address">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.25rem;">➜</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 VoltAmpere Systems. All rights reserved.</p>
+                <div style="display: flex; gap: var(--spacing-md);">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-form');
+            const submitBtn = form.querySelector('.btn-submit');
+            const successMsg = document.getElementById('success-message');
+            
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Add loading spinner classes
+                submitBtn.classList.add('loading');
+                submitBtn.disabled = true;
+                
+                // Simulate network latency (1.5 seconds)
+                setTimeout(() => {
+                    form.style.display = 'none';
+                    successMsg.style.display = 'block';
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
