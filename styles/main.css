@@ -63,16 +63,16 @@
 
 /* --- DARK MODE OVERRIDES --- */
 [data-theme="dark"] {
-    --bg-primary: #090e17;
-    --bg-secondary: #0f172a;
-    --bg-tertiary: #1e293b;
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --bg-tertiary: #141414;
     --text-primary: #f8fafc;
     --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
     --border-color: rgba(248, 250, 252, 0.07);
     
     /* Glassmorphism Dark */
-    --glass-bg: rgba(15, 23, 42, 0.6);
+    --glass-bg: rgba(10, 10, 10, 0.6);
     --glass-border: rgba(248, 250, 252, 0.07);
     --glass-shadow: rgba(0, 0, 0, 0.25);
     
