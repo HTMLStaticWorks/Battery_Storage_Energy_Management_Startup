@@ -159,9 +159,9 @@
                                 </linearGradient>
                             </defs>
                             <!-- Orbit rings -->
-                            <circle cx="200" cy="200" r="100" stroke="rgba(255,255,255,0.08)" stroke-width="2" fill="none"/>
-                            <ellipse cx="200" cy="200" rx="140" ry="60" stroke="rgba(255,255,255,0.08)" stroke-width="2" fill="none" transform="rotate(45 200 200)"/>
-                            <ellipse cx="200" cy="200" rx="140" ry="60" stroke="rgba(255,255,255,0.08)" stroke-width="2" fill="none" transform="rotate(-45 200 200)"/>
+                            <circle cx="200" cy="200" r="100" stroke="var(--svg-orbit-stroke)" stroke-width="1.5" fill="none"/>
+                            <ellipse cx="200" cy="200" rx="140" ry="60" stroke="var(--svg-orbit-stroke-secondary)" stroke-width="1.5" fill="none" transform="rotate(45 200 200)"/>
+                            <ellipse cx="200" cy="200" rx="140" ry="60" stroke="var(--svg-orbit-stroke-secondary)" stroke-width="1.5" fill="none" transform="rotate(-45 200 200)"/>
                             
                             <!-- Central Battery Core -->
                             <g transform="translate(160, 160)" style="animation: rotate-about 12s linear infinite; transform-origin: 40px 40px;">
@@ -266,10 +266,10 @@
                 
                 <div class="reveal stagger-2 flex-center" style="height: 380px; position: relative;">
                     <!-- Interactive molecular graphic using SVG -->
-                    <svg viewBox="0 0 300 300" width="300" height="300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg viewBox="0 0 300 300" style="width: 100%; max-width: 260px; height: auto;" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <!-- Orbit circles -->
-                        <circle cx="150" cy="150" r="100" stroke="var(--border-color)" stroke-width="1.5" stroke-dasharray="4 6"/>
-                        <circle cx="150" cy="150" r="60" stroke="var(--border-color)" stroke-width="1"/>
+                        <circle cx="150" cy="150" r="100" stroke="var(--svg-orbit-stroke)" stroke-width="1.5" stroke-dasharray="4 6"/>
+                        <circle cx="150" cy="150" r="60" stroke="var(--svg-orbit-stroke-secondary)" stroke-width="1.2"/>
                         
                         <!-- Center Core (Lithium Node) -->
                         <circle cx="150" cy="150" r="30" fill="url(#core-grad)" filter="drop-shadow(0 0 15px var(--accent-primary))"/>
@@ -292,9 +292,9 @@
                     </svg>
                     
                     <!-- Label indicators absolute tags fading sequentially -->
-                    <div class="chem-node-label" style="position: absolute; top: 30px; left: 10px; opacity: 0; transition: opacity 0.8s;">✦ Thermal Shunt Sensor</div>
-                    <div class="chem-node-label" style="position: absolute; top: 120px; right: 10px; opacity: 0; transition: opacity 0.8s;">✦ Overcharge Safeguard</div>
-                    <div class="chem-node-label" style="position: absolute; bottom: 30px; left: 40px; opacity: 0; transition: opacity 0.8s;">✦ Solid-Electrolyte Layer</div>
+                    <div class="chem-node-label" style="position: absolute; top: 30px; left: 10px; transform: none; opacity: 0; transition: opacity 0.8s;">✦ Thermal Shunt Sensor</div>
+                    <div class="chem-node-label" style="position: absolute; top: 120px; right: 10px; transform: none; opacity: 0; transition: opacity 0.8s;">✦ Overcharge Safeguard</div>
+                    <div class="chem-node-label" style="position: absolute; top: auto; bottom: 30px; left: 40px; transform: none; opacity: 0; transition: opacity 0.8s;">✦ Solid-Electrolyte Layer</div>
                 </div>
             </div>
         </div>

@@ -83,13 +83,23 @@
 }
 
 /* --- ACCENT SPECIFIC PATTERNS --- */
-/* Theme variant 1: Cyan/Electric Blue (Home 1 style) */
 .theme-cyan-green {
     --accent-primary: #00f2fe;
     --accent-secondary: #4facfe;
     --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
     --accent-glow: rgba(0, 242, 254, 0.2);
     --accent-glow-secondary: rgba(79, 172, 254, 0.15);
+    
+    /* Responsive SVG orbits for light mode (darker blue/cyan for contrast on white) */
+    --svg-orbit-stroke: rgba(0, 114, 255, 0.25);
+    --svg-orbit-stroke-secondary: rgba(13, 148, 136, 0.25);
+}
+
+[data-theme="dark"] .theme-cyan-green,
+[data-theme="dark"].theme-cyan-green {
+    /* Responsive SVG orbits for dark mode (bright glowing colors on black) */
+    --svg-orbit-stroke: rgba(0, 242, 254, 0.35);
+    --svg-orbit-stroke-secondary: rgba(0, 255, 135, 0.25);
 }
 
 /* Theme variant 2: Emerald Green & Solar Amber (Home 2 style) */
@@ -99,6 +109,17 @@
     --accent-gradient: linear-gradient(135deg, #10b981 0%, #f59e0b 100%);
     --accent-glow: rgba(16, 185, 129, 0.2);
     --accent-glow-secondary: rgba(245, 158, 11, 0.15);
+    
+    /* Responsive SVG orbits for light mode */
+    --svg-orbit-stroke: rgba(16, 185, 129, 0.3);
+    --svg-orbit-stroke-secondary: rgba(245, 158, 11, 0.25);
+}
+
+[data-theme="dark"] .theme-emerald-amber,
+[data-theme="dark"].theme-emerald-amber {
+    /* Responsive SVG orbits for dark mode */
+    --svg-orbit-stroke: rgba(16, 185, 129, 0.35);
+    --svg-orbit-stroke-secondary: rgba(245, 158, 11, 0.3);
 }
 
 /* --- RESET & BASIC STYLING --- */

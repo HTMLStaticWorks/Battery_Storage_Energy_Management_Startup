@@ -462,8 +462,23 @@
             btnRes.addEventListener('click', () => toggleColumns(true));
             btnCom.addEventListener('click', () => toggleColumns(false));
             
-            // Initial call
-            toggleColumns(true);
+            // Initial call based on URL hash or query parameter
+            const hash = window.location.hash || window.location.search;
+            if (hash.includes('enterprise') || hash.includes('commercial')) {
+                toggleColumns(false);
+            } else {
+                toggleColumns(true);
+            }
+
+            // Listen for hash changes while on the page
+            window.addEventListener('hashchange', () => {
+                const currentHash = window.location.hash;
+                if (currentHash.includes('enterprise') || currentHash.includes('commercial')) {
+                    toggleColumns(false);
+                } else {
+                    toggleColumns(true);
+                }
+            });
             
             // Handle keypress flip triggers (accessibility)
             const flips = document.querySelectorAll('.flip-card-container');
