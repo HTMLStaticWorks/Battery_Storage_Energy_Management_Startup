@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     init3DTiltCards();
     initHorizontalTimeline();
     initCoverflowTestimonials();
-    initFAQAccordion();
 });
 
 /* --- COUNT-UP STAT NUMBERS --- */
@@ -159,32 +158,4 @@ function initCoverflowTestimonials() {
     
     updateCoverflow();
 }
-
-/* --- FAQ ACCORDION INTERPOLATION --- */
-function initFAQAccordion() {
-    const triggers = document.querySelectorAll('.accordion-trigger');
-    
-    triggers.forEach(trigger => {
-        trigger.addEventListener('click', function() {
-            const panel = this.nextElementSibling;
-            const isOpen = this.classList.contains('open');
-            
-            // Close other accordions
-            triggers.forEach(t => {
-                if (t !== trigger) {
-                    t.classList.remove('open');
-                    t.nextElementSibling.style.maxHeight = null;
-                }
-            });
-            
-            // Toggle current
-            if (isOpen) {
-                this.classList.remove('open');
-                panel.style.maxHeight = null;
-            } else {
-                this.classList.add('open');
-                panel.style.maxHeight = panel.scrollHeight + 'px';
-            }
-        });
-    });
 }

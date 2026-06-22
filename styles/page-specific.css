@@ -620,7 +620,12 @@
     position: relative;
     z-index: 2;
     color: var(--text-secondary);
-    transition: color var(--transition-fast);
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.toggle-pill-btn:hover {
+    color: var(--text-primary);
+    transform: scale(1.02);
 }
 
 .toggle-pill-btn.active {
@@ -637,6 +642,7 @@
     border-radius: var(--radius-full);
     z-index: 1;
     transition: transform var(--transition-smooth);
+    pointer-events: none; /* Make clicks pass through to the buttons behind */
 }
 
 .toggle-pill-wrapper.switched .toggle-pill-slider {
@@ -691,24 +697,53 @@
 
 /* --- MASONRY GALLERY --- */
 .masonry-gallery {
-    column-count: 3;
-    column-gap: var(--spacing-md);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
 }
 
 .masonry-item {
-    break-inside: avoid;
-    margin-bottom: var(--spacing-md);
     position: relative;
     border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     cursor: zoom-in;
     transition: transform var(--transition-smooth);
+    height: 320px; /* Uniform height for premium grid alignment */
+    display: flex;
+    flex-direction: column;
+}
+
+.masonry-item:nth-child(4) {
+    grid-column: 2; /* Keep 4th card centered in the middle of 3-column layout */
 }
 
 .masonry-item img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
+}
+
+@media (max-width: 1024px) {
+    .masonry-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .masonry-item:nth-child(4) {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 580px) {
+    .masonry-gallery {
+        grid-template-columns: 1fr;
+    }
+    .masonry-item:nth-child(4) {
+        grid-column: auto;
+    }
+    .masonry-item {
+        height: 280px; /* Slightly shorter for mobile phones */
+    }
 }
 
 .masonry-item:hover {
@@ -857,6 +892,33 @@
     box-shadow: 0 0 10px var(--accent-glow);
 }
 
+/* Custom interactive dropdown arrow for select elements */
+select.form-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2em;
+    padding: 0.6rem 2.5rem 0.6rem 1rem !important;
+    cursor: pointer;
+}
+
+[data-theme="dark"] select.form-input {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+}
+
+html[dir="rtl"] select.form-input {
+    background-position: left 1rem center;
+    padding: 0.6rem 1rem 0.6rem 2.5rem !important;
+}
+
+select.form-input option {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
 .form-label {
     position: absolute;
     top: 50%;
@@ -926,7 +988,7 @@ textarea.form-input:not(:placeholder-shown) + .form-label {
 /* Media layout adaptations */
 @media (max-width: 900px) {
     .masonry-gallery {
-        column-count: 2;
+        grid-template-columns: repeat(2, 1fr);
     }
     .chemistry-diagram-container {
         grid-template-columns: 1fr;
@@ -941,7 +1003,7 @@ textarea.form-input:not(:placeholder-shown) + .form-label {
 
 @media (max-width: 600px) {
     .masonry-gallery {
-        column-count: 1;
+        grid-template-columns: 1fr;
     }
     .timeline-steps {
         flex-direction: column;
@@ -962,5 +1024,49 @@ textarea.form-input:not(:placeholder-shown) + .form-label {
     }
     .timeline-node {
         margin-bottom: 0;
+    }
+}
+
+/* ==========================================================================
+   PAGE SPECIFIC RTL LAYOUT OVERRIDES
+   ========================================================================== */
+html[dir="rtl"] .accordion-trigger {
+    text-align: right;
+}
+
+html[dir="rtl"] .comparison-table,
+html[dir="rtl"] .comparison-table th,
+html[dir="rtl"] .comparison-table td {
+    text-align: right;
+}
+
+html[dir="rtl"] .contact-info-card {
+    text-align: right;
+}
+
+html[dir="rtl"] .coverflow-card.prev {
+    transform: rotateY(-45deg) translateZ(-150px) translateX(280px);
+}
+
+html[dir="rtl"] .coverflow-card.next {
+    transform: rotateY(45deg) translateZ(-150px) translateX(-280px);
+}
+
+html[dir="rtl"] .toggle-pill-slider {
+    left: auto;
+    right: 4px;
+}
+
+html[dir="rtl"] .toggle-pill-wrapper.switched .toggle-pill-slider {
+    transform: translateX(-100%);
+}
+
+@media (max-width: 600px) {
+    html[dir="rtl"] .timeline-progress-line {
+        left: auto;
+        right: 28px;
+    }
+    html[dir="rtl"] .timeline-step {
+        text-align: right;
     }
 }

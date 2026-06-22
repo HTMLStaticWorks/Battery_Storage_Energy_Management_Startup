@@ -4,10 +4,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
+    initRTL();
     initMobileNav();
     initScrollEffects();
     initButtonRipples();
     setActiveNavLink();
+    initFAQAccordion();
+    initScrollUpButton();
 });
 
 /* --- THEME CONTROLLER (LIGHT/DARK MODE) --- */
@@ -28,6 +31,28 @@ function initTheme() {
             
             // Dispatch custom event for page-specific visual redraws (like canvas/charts)
             window.dispatchEvent(new CustomEvent('themechanged', { detail: { theme: newTheme } }));
+        });
+    });
+}
+
+/* --- RTL LAYOUT CONTROLLER (LTR/RTL MODE) --- */
+function initRTL() {
+    const rtlToggleBtns = document.querySelectorAll('.rtl-toggle-btn');
+    const storedDir = localStorage.getItem('dir') || 'ltr';
+    
+    // Set initial layout direction
+    document.documentElement.setAttribute('dir', storedDir);
+    
+    rtlToggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+            const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+            
+            document.documentElement.setAttribute('dir', newDir);
+            localStorage.setItem('dir', newDir);
+            
+            // Dispatch custom event for page-specific layout adjustments
+            window.dispatchEvent(new CustomEvent('dirchanged', { detail: { dir: newDir } }));
         });
     });
 }
@@ -139,5 +164,77 @@ function setActiveNavLink() {
         } else {
             link.classList.remove('active');
         }
+    });
+}
+
+/* --- FAQ ACCORDION INTERPOLATION --- */
+function initFAQAccordion() {
+    const triggers = document.querySelectorAll('.accordion-trigger');
+    
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', function() {
+            // Find next element (either .accordion-panel or .accordion-panel-grid)
+            const panel = this.nextElementSibling;
+            if (!panel) return;
+            const isOpen = this.classList.contains('open');
+            
+            // Close other accordions
+            triggers.forEach(t => {
+                if (t !== trigger) {
+                    t.classList.remove('open');
+                    const otherPanel = t.nextElementSibling;
+                    if (otherPanel) {
+                        if (otherPanel.classList.contains('accordion-panel-grid')) {
+                            otherPanel.classList.remove('open');
+                        } else {
+                            otherPanel.style.maxHeight = null;
+                        }
+                    }
+                }
+            });
+            
+            // Toggle current panel
+            if (panel.classList.contains('accordion-panel-grid')) {
+                if (isOpen) {
+                    this.classList.remove('open');
+                    panel.classList.remove('open');
+                } else {
+                    this.classList.add('open');
+                    panel.classList.add('open');
+                }
+            } else {
+                if (isOpen) {
+                    this.classList.remove('open');
+                    panel.style.maxHeight = null;
+                } else {
+                    this.classList.add('open');
+                    panel.style.maxHeight = panel.scrollHeight + 'px';
+                }
+            }
+        });
+    });
+}
+
+/* --- DYNAMIC SCROLL UP BUTTON --- */
+function initScrollUpButton() {
+    const btn = document.createElement('button');
+    btn.className = 'scroll-up-btn';
+    btn.setAttribute('aria-label', 'Scroll to Top');
+    btn.innerHTML = '▲';
+    document.body.appendChild(btn);
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            btn.classList.add('show');
+        } else {
+            btn.classList.remove('show');
+        }
+    }, { passive: true });
+    
+    btn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 }

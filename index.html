@@ -51,6 +51,14 @@
                     </svg>
                 </button>
 
+                <button class="rtl-toggle-btn" aria-label="Toggle Layout Direction">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 8h16M16 4l4 4-4 4" />
+                        <path d="M20 16H4M8 12l-4 4 4 4" />
+                    </svg>
+                </button>
+
                 <a href="contact.html" class="btn btn-secondary"
                     style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Quote</a>
             </nav>
@@ -64,19 +72,27 @@
     <!-- MOBILE NAVIGATION DRAWER -->
     <div class="mobile-backdrop"></div>
     <nav class="mobile-nav" aria-label="Mobile Navigation">
-        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode"
-            style="align-self: flex-end; margin-bottom: var(--spacing-sm);">
-            <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="4" />
-                <path
-                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-            </svg>
-            <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-            </svg>
-        </button>
+        <div style="display: flex; gap: var(--spacing-xs); align-self: flex-end; margin-bottom: var(--spacing-sm);">
+            <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode">
+                <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4" />
+                    <path
+                        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                </svg>
+                <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                </svg>
+            </button>
+            <button class="rtl-toggle-btn" aria-label="Toggle Layout Direction">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 8h16M16 4l4 4-4 4" />
+                    <path d="M20 16H4M8 12l-4 4 4 4" />
+                </svg>
+            </button>
+        </div>
         <a href="index.html" class="nav-link active">Home</a>
         <a href="home2.html" class="nav-link">Home2</a>
         <a href="about.html" class="nav-link">About</a>
@@ -252,25 +268,9 @@
                 <div class="tilt-card-container reveal">
                     <div class="card-3d-tilt">
                         <div class="card-3d-content">
-                            <!-- SVG Chemistry Graphic 1 -->
-                            <div
-                                style="width: 100%; height: 160px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;">
-                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="50" cy="50" r="40" stroke="url(#cyan-grad)" stroke-width="2"
-                                        stroke-dasharray="6 4" />
-                                    <circle cx="50" cy="50" r="20" fill="url(#cyan-grad)" fill-opacity="0.2" />
-                                    <circle cx="50" cy="50" r="10" fill="#00f2fe" />
-                                    <path d="M50 10v10M50 80v10M10 50h10M80 50h10" stroke="#00f2fe" stroke-width="2"
-                                        stroke-linecap="round" />
-                                    <defs>
-                                        <linearGradient id="cyan-grad" x1="0" y1="0" x2="100" y2="100">
-                                            <stop offset="0%" stop-color="#00f2fe" />
-                                            <stop offset="100%" stop-color="#4facfe" />
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
-                            </div>
+                            <!-- Lithium-Ion Core Image -->
+                            <img src="assets/images/lithium_ion_core.png" alt="Lithium-Ion Core technology"
+                                style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: var(--spacing-md);">
                             <h3>Lithium-Ion Core</h3>
                             <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--spacing-sm);">
                                 Maximum energy density, fast charging, and compact installation dimensions.</p>
@@ -285,26 +285,9 @@
                 <div class="tilt-card-container reveal stagger-2">
                     <div class="card-3d-tilt">
                         <div class="card-3d-content">
-                            <!-- SVG Chemistry Graphic 2 -->
-                            <div
-                                style="width: 100%; height: 160px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;">
-                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="20" y="20" width="25" height="60" rx="4" stroke="url(#teal-grad)"
-                                        stroke-width="2" />
-                                    <rect x="55" y="20" width="25" height="60" rx="4" stroke="url(#teal-grad)"
-                                        stroke-width="2" />
-                                    <path d="M32.5 10v10M67.5 10v10M45 40h10M45 60h10" stroke="#00ff87"
-                                        stroke-width="2" />
-                                    <circle cx="50" cy="50" r="6" fill="#00ff87" />
-                                    <defs>
-                                        <linearGradient id="teal-grad" x1="0" y1="0" x2="100" y2="100">
-                                            <stop offset="0%" stop-color="#4facfe" />
-                                            <stop offset="100%" stop-color="#00ff87" />
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
-                            </div>
+                            <!-- Redox Flow Units Image -->
+                            <img src="assets/images/redox_flow_units.png" alt="Redox Flow Units technology"
+                                style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: var(--spacing-md);">
                             <h3>Redox Flow Units</h3>
                             <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--spacing-sm);">
                                 Infinite cycle longevity, low thermal load, and modular power adjustments.</p>
@@ -319,24 +302,9 @@
                 <div class="tilt-card-container reveal stagger-3">
                     <div class="card-3d-tilt">
                         <div class="card-3d-content">
-                            <!-- SVG Chemistry Graphic 3 -->
-                            <div
-                                style="width: 100%; height: 160px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;">
-                                <svg width="100" height="100" viewBox="0 0 100 100" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <polygon points="50,15 85,35 85,75 50,95 15,75 15,35" stroke="url(#neon-grad)"
-                                        stroke-width="2" fill="none" />
-                                    <polygon points="50,30 73,43 73,70 50,83 27,70 27,43" fill="url(#neon-grad)"
-                                        fill-opacity="0.15" />
-                                    <circle cx="50" cy="56" r="8" fill="#00f2fe" />
-                                    <defs>
-                                        <linearGradient id="neon-grad" x1="0" y1="0" x2="100" y2="100">
-                                            <stop offset="0%" stop-color="#00f2fe" />
-                                            <stop offset="100%" stop-color="#00ff87" />
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
-                            </div>
+                            <!-- Solid-State Vaults Image -->
+                            <img src="assets/images/solid_state_vaults.png" alt="Solid-State Vaults technology"
+                                style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: var(--spacing-md);">
                             <h3>Solid-State Vaults</h3>
                             <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--spacing-sm);">
                                 Unmatched operating safety buffers, non-flammable chemistry, and extreme temperature

@@ -39,6 +39,14 @@
                     <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
                 </button>
                 
+                <button class="rtl-toggle-btn" aria-label="Toggle Layout Direction">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 8h16M16 4l4 4-4 4" />
+                        <path d="M20 16H4M8 12l-4 4 4 4" />
+                    </svg>
+                </button>
+                
                 <a href="contact.html" class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Quote</a>
             </nav>
             
@@ -51,10 +59,19 @@
     <!-- MOBILE NAVIGATION DRAWER -->
     <div class="mobile-backdrop"></div>
     <nav class="mobile-nav" aria-label="Mobile Navigation">
-        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode" style="align-self: flex-end; margin-bottom: var(--spacing-sm);">
-            <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-            <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-        </button>
+        <div style="display: flex; gap: var(--spacing-xs); align-self: flex-end; margin-bottom: var(--spacing-sm);">
+            <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode">
+                <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            </button>
+            <button class="rtl-toggle-btn" aria-label="Toggle Layout Direction">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 8h16M16 4l4 4-4 4" />
+                    <path d="M20 16H4M8 12l-4 4 4 4" />
+                </svg>
+            </button>
+        </div>
         <a href="index.html" class="nav-link">Home</a>
         <a href="home2.html" class="nav-link">Home2</a>
         <a href="about.html" class="nav-link active">About</a>
@@ -289,11 +306,7 @@
                 <!-- Member 1 -->
                 <div class="reveal team-card">
                     <div class="team-card-image-wrap">
-                        <!-- Custom styled team avatar in vector SVG to satisfy unique image constraint -->
-                        <svg viewBox="0 0 100 100" class="team-card-image" style="width: 100%; height: 100%; display: block; background: #1e293b;">
-                            <circle cx="50" cy="40" r="20" fill="var(--accent-primary)"/>
-                            <path d="M20 85 C20 65, 35 60, 50 60 C65 60, 80 65, 80 85 Z" fill="var(--accent-secondary)"/>
-                        </svg>
+                        <img src="assets/images/team_elena.png" alt="Dr. Elena Rostova" class="team-card-image">
                     </div>
                     <div class="team-card-info">
                         <h3>Dr. Elena Rostova</h3>
@@ -304,10 +317,7 @@
                 <!-- Member 2 -->
                 <div class="reveal stagger-2 team-card">
                     <div class="team-card-image-wrap">
-                        <svg viewBox="0 0 100 100" class="team-card-image" style="width: 100%; height: 100%; display: block; background: #1e293b;">
-                            <circle cx="50" cy="40" r="18" fill="var(--accent-secondary)"/>
-                            <path d="M25 85 C25 68, 38 62, 50 62 C62 62, 75 68, 75 85 Z" fill="var(--accent-primary)"/>
-                        </svg>
+                        <img src="assets/images/team_marcus.png" alt="Marcus Vance" class="team-card-image">
                     </div>
                     <div class="team-card-info">
                         <h3>Marcus Vance</h3>

@@ -39,6 +39,14 @@
                     <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
                 </button>
                 
+                <button class="rtl-toggle-btn" aria-label="Toggle Layout Direction">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 8h16M16 4l4 4-4 4" />
+                        <path d="M20 16H4M8 12l-4 4 4 4" />
+                    </svg>
+                </button>
+                
                 <a href="contact.html" class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Quote</a>
             </nav>
             
@@ -51,10 +59,19 @@
     <!-- MOBILE NAVIGATION DRAWER -->
     <div class="mobile-backdrop"></div>
     <nav class="mobile-nav" aria-label="Mobile Navigation">
-        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode" style="align-self: flex-end; margin-bottom: var(--spacing-sm);">
-            <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-            <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-        </button>
+        <div style="display: flex; gap: var(--spacing-xs); align-self: flex-end; margin-bottom: var(--spacing-sm);">
+            <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode">
+                <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            </button>
+            <button class="rtl-toggle-btn" aria-label="Toggle Layout Direction">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 8h16M16 4l4 4-4 4" />
+                    <path d="M20 16H4M8 12l-4 4 4 4" />
+                </svg>
+            </button>
+        </div>
         <a href="index.html" class="nav-link">Home</a>
         <a href="home2.html" class="nav-link active">Home2</a>
         <a href="about.html" class="nav-link">About</a>
@@ -144,12 +161,8 @@
             <div class="grid-2">
                 <!-- Residential Block -->
                 <div class="reveal" style="background: var(--bg-secondary); padding: var(--spacing-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
-                    <!-- SVG Residential house graphic -->
-                    <svg viewBox="0 0 100 60" width="80" height="48" style="margin-bottom: var(--spacing-md);" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 50 L50 20 L90 50 Z" stroke="var(--accent-primary)" stroke-width="2"/>
-                        <rect x="25" y="38" width="50" height="22" stroke="var(--accent-primary)" stroke-width="2" fill="none"/>
-                        <rect x="42" y="46" width="16" height="14" fill="var(--accent-primary)"/>
-                    </svg>
+                    <!-- Residential Storage Image -->
+                    <img src="assets/images/res_battery.png" alt="Residential Storage Banks" style="width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: var(--spacing-md);">
                     <h3>Residential Storage Banks</h3>
                     <p>Equip houses with modular lithium wall units. Protect families against outages and store energy during off-peak times.</p>
                     <a href="solutions.html" class="btn btn-secondary" style="margin-top: var(--spacing-sm);">Home Units ➜</a>
@@ -157,14 +170,8 @@
                 
                 <!-- Commercial Block -->
                 <div class="reveal stagger-2" style="background: var(--bg-secondary); padding: var(--spacing-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
-                    <!-- SVG Commercial corporate graphic -->
-                    <svg viewBox="0 0 100 60" width="80" height="48" style="margin-bottom: var(--spacing-md);" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="15" y="10" width="30" height="50" stroke="var(--accent-secondary)" stroke-width="2"/>
-                        <rect x="55" y="25" width="30" height="35" stroke="var(--accent-secondary)" stroke-width="2"/>
-                        <line x1="22" y1="20" x2="38" y2="20" stroke="var(--border-color)" stroke-width="2"/>
-                        <line x1="22" y1="32" x2="38" y2="32" stroke="var(--border-color)" stroke-width="2"/>
-                        <line x1="62" y1="35" x2="78" y2="35" stroke="var(--border-color)" stroke-width="2"/>
-                    </svg>
+                    <!-- Commercial Battery Image -->
+                    <img src="assets/images/com_battery.png" alt="Commercial Battery Packs" style="width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: var(--spacing-md);">
                     <h3>Commercial Battery Packs</h3>
                     <p>Equip businesses with scalable rack systems. Mitigate utility demand pricing and secure enterprise operations.</p>
                     <a href="solutions.html" class="btn btn-secondary" style="margin-top: var(--spacing-sm);">Enterprise Units ➜</a>

@@ -309,7 +309,7 @@ a {
     left: 0;
     width: 100%;
     height: var(--header-height);
-    z-index: 100;
+    z-index: 102; /* Raised to overlay drawer navigation backdrop and button controls */
     transition: background var(--transition-smooth), height var(--transition-smooth);
 }
 
@@ -410,6 +410,36 @@ a {
 [data-theme="dark"] .theme-toggle-btn .sun { display: none; }
 [data-theme="dark"] .theme-toggle-btn .moon { display: block; }
 
+/* RTL Mode Button */
+.rtl-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    transition: background var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rtl-toggle-btn:hover {
+    background: var(--border-color);
+}
+
+.rtl-toggle-btn svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    transition: transform var(--transition-smooth);
+}
+
+[dir="rtl"] .rtl-toggle-btn svg {
+    transform: rotate(180deg);
+}
+
 /* Hamburger Menu Button */
 .menu-btn {
     display: none;
@@ -472,6 +502,27 @@ a {
     padding: 100px var(--spacing-lg) var(--spacing-lg);
     gap: var(--spacing-md);
     transition: right var(--transition-smooth);
+    overflow-y: auto; /* Scrollable drawer content */
+    scrollbar-width: thin; /* Firefox subtle scrollbar */
+}
+
+/* Subtle custom scrollbars for mobile drawer navigation */
+.mobile-nav::-webkit-scrollbar {
+    width: 6px;
+}
+
+.mobile-nav::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: var(--radius-full);
+}
+
+/* Reposition Theme & RTL buttons container to the bottom */
+.mobile-nav > div:first-of-type {
+    order: 10;
+    margin-top: auto;
+    align-self: center !important;
+    margin-bottom: 0 !important;
+    padding-top: var(--spacing-md);
 }
 
 .mobile-nav.open {
@@ -683,4 +734,70 @@ a {
     .footer-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* ==========================================================================
+   GLOBAL RTL DIRECTION STYLES
+   ========================================================================== */
+html[dir="rtl"] {
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+html[dir="rtl"] .mobile-nav {
+    right: auto;
+    left: -100%;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
+    transition: left var(--transition-smooth);
+}
+
+html[dir="rtl"] .mobile-nav.open {
+    left: 0;
+    right: auto;
+}
+
+html[dir="rtl"] .footer-links a:hover {
+    padding-left: 0;
+    padding-right: 4px;
+}
+
+/* --- SCROLL TO TOP BUTTON --- */
+.scroll-up-btn {
+    position: fixed;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity var(--transition-smooth), transform var(--transition-smooth), visibility var(--transition-smooth), background-color var(--transition-fast);
+    box-shadow: var(--shadow-md), 0 0 15px var(--accent-primary);
+}
+
+.scroll-up-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-up-btn:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg), 0 0 25px var(--accent-primary);
+}
+
+/* Adjust scroll up button positioning for RTL layouts */
+html[dir="rtl"] .scroll-up-btn {
+    right: auto;
+    left: var(--spacing-md);
 }
