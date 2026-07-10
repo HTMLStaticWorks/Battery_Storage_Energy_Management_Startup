@@ -84,11 +84,11 @@
 
 /* --- ACCENT SPECIFIC PATTERNS --- */
 .theme-cyan-green {
-    --accent-primary: #00f2fe;
-    --accent-secondary: #4facfe;
-    --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-    --accent-glow: rgba(0, 242, 254, 0.2);
-    --accent-glow-secondary: rgba(79, 172, 254, 0.15);
+    --accent-primary: #0891b2; /* Deep Cyan - WCAG AA compliant on white */
+    --accent-secondary: #0284c7; /* Deep Blue - WCAG AA compliant on white */
+    --accent-gradient: linear-gradient(135deg, #0891b2 0%, #0284c7 100%);
+    --accent-glow: rgba(8, 145, 178, 0.12);
+    --accent-glow-secondary: rgba(2, 132, 199, 0.1);
     
     /* Responsive SVG orbits for light mode (darker blue/cyan for contrast on white) */
     --svg-orbit-stroke: rgba(0, 114, 255, 0.25);
@@ -97,6 +97,12 @@
 
 [data-theme="dark"] .theme-cyan-green,
 [data-theme="dark"].theme-cyan-green {
+    --accent-primary: #00f2fe; /* Neon Cyan - glowing on black */
+    --accent-secondary: #4facfe; /* Neon Blue - glowing on black */
+    --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    --accent-glow: rgba(0, 242, 254, 0.2);
+    --accent-glow-secondary: rgba(79, 172, 254, 0.15);
+
     /* Responsive SVG orbits for dark mode (bright glowing colors on black) */
     --svg-orbit-stroke: rgba(0, 242, 254, 0.35);
     --svg-orbit-stroke-secondary: rgba(0, 255, 135, 0.25);
@@ -104,11 +110,11 @@
 
 /* Theme variant 2: Emerald Green & Solar Amber (Home 2 style) */
 .theme-emerald-amber {
-    --accent-primary: #10b981;
-    --accent-secondary: #f59e0b;
-    --accent-gradient: linear-gradient(135deg, #10b981 0%, #f59e0b 100%);
-    --accent-glow: rgba(16, 185, 129, 0.2);
-    --accent-glow-secondary: rgba(245, 158, 11, 0.15);
+    --accent-primary: #059669; /* Darker Emerald - WCAG AA compliant */
+    --accent-secondary: #d97706; /* Darker Amber - WCAG AA compliant */
+    --accent-gradient: linear-gradient(135deg, #059669 0%, #d97706 100%);
+    --accent-glow: rgba(5, 150, 105, 0.12);
+    --accent-glow-secondary: rgba(217, 119, 6, 0.15);
     
     /* Responsive SVG orbits for light mode */
     --svg-orbit-stroke: rgba(16, 185, 129, 0.3);
@@ -117,6 +123,12 @@
 
 [data-theme="dark"] .theme-emerald-amber,
 [data-theme="dark"].theme-emerald-amber {
+    --accent-primary: #10b981; /* Bright Emerald - glowing on black */
+    --accent-secondary: #f59e0b; /* Bright Amber - glowing on black */
+    --accent-gradient: linear-gradient(135deg, #10b981 0%, #f59e0b 100%);
+    --accent-glow: rgba(16, 185, 129, 0.2);
+    --accent-glow-secondary: rgba(245, 158, 11, 0.15);
+
     /* Responsive SVG orbits for dark mode */
     --svg-orbit-stroke: rgba(16, 185, 129, 0.35);
     --svg-orbit-stroke-secondary: rgba(245, 158, 11, 0.3);

@@ -95,27 +95,39 @@
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
         scene.add(ambientLight);
 
-        // Key directional light (cyan tint)
-        const dirLight1 = new THREE.DirectionalLight(0x00f2fe, 1.5);
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+
+        // Key directional light (cyan tint in dark mode, pure white in light mode)
+        const dirLight1 = new THREE.DirectionalLight(
+            currentTheme === 'light' ? 0xffffff : 0x00f2fe,
+            currentTheme === 'light' ? 1.0 : 1.5
+        );
         dirLight1.position.set(5, 5, 5);
         scene.add(dirLight1);
 
-        // Fill directional light (magenta/blue tint)
-        const dirLight2 = new THREE.DirectionalLight(0x4facfe, 0.8);
+        // Fill directional light (blue tint in dark mode, soft gray fill in light mode)
+        const dirLight2 = new THREE.DirectionalLight(
+            currentTheme === 'light' ? 0xe2e8f0 : 0x4facfe,
+            currentTheme === 'light' ? 0.5 : 0.8
+        );
         dirLight2.position.set(-5, -3, 3);
         scene.add(dirLight2);
 
         // Point light for glowing reflection
-        const pointLight = new THREE.PointLight(0x00ff87, 2, 15);
+        const pointLight = new THREE.PointLight(
+            currentTheme === 'light' ? 0x00f2fe : 0x00ff87,
+            currentTheme === 'light' ? 1.0 : 2.0,
+            15
+        );
         pointLight.position.set(0, 0, 3);
         scene.add(pointLight);
 
         // 5. Create Battery Model Group
         batteryGroup = new THREE.Group();
         
-        // Materials
+        // Materials (light gray metal in light mode, dark slate in dark mode)
         const metalMaterial = new THREE.MeshStandardMaterial({
-            color: 0x1e293b,
+            color: currentTheme === 'light' ? 0xcbd5e1 : 0x1e293b,
             metalness: 0.85,
             roughness: 0.2,
             envMapIntensity: 1.0
@@ -188,12 +200,20 @@
             const theme = e.detail.theme;
             if (theme === 'light') {
                 metalMaterial.color.setHex(0xcbd5e1);
+                dirLight1.color.setHex(0xffffff);
                 dirLight1.intensity = 1.0;
+                dirLight2.color.setHex(0xe2e8f0);
                 dirLight2.intensity = 0.5;
+                pointLight.color.setHex(0x00f2fe);
+                pointLight.intensity = 1.0;
             } else {
                 metalMaterial.color.setHex(0x1e293b);
+                dirLight1.color.setHex(0x00f2fe);
                 dirLight1.intensity = 1.5;
+                dirLight2.color.setHex(0x4facfe);
                 dirLight2.intensity = 0.8;
+                pointLight.color.setHex(0x00ff87);
+                pointLight.intensity = 2.0;
             }
         });
 
