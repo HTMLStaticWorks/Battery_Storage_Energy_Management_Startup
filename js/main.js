@@ -21,6 +21,9 @@ function initTheme() {
     // Set initial theme
     document.documentElement.setAttribute('data-theme', storedTheme);
     
+    // Update favicon color dynamically based on initial theme
+    updateFaviconColor();
+    
     themeToggleBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -29,10 +32,32 @@ function initTheme() {
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             
+            // Update favicon color dynamically on theme change
+            updateFaviconColor();
+            
             // Dispatch custom event for page-specific visual redraws (like canvas/charts)
             window.dispatchEvent(new CustomEvent('themechanged', { detail: { theme: newTheme } }));
         });
     });
+}
+
+/* --- DYNAMIC FAVICON COLOR CONTROLLER --- */
+function updateFaviconColor() {
+    // Ensure document.body exists and style computation has resolved
+    setTimeout(() => {
+        const body = document.body;
+        if (!body) return;
+        const accentColor = getComputedStyle(body).getPropertyValue('--accent-primary').trim();
+        if (!accentColor) return;
+        
+        // Convert hex color to SVG-friendly format (replace '#' with '%23')
+        const encodedColor = accentColor.replace('#', '%23');
+        
+        const faviconLink = document.querySelector('link[rel="icon"]');
+        if (faviconLink) {
+            faviconLink.setAttribute('href', `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='${encodedColor}' d='M13 10V3L4 14h7v7l9-11h-7z'/%3E%3C/svg%3E`);
+        }
+    }, 0);
 }
 
 /* --- RTL LAYOUT CONTROLLER (LTR/RTL MODE) --- */
